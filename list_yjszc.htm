@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--header start-->
+{dede:include filename="head.htm"/}
+<!--header start-->
+
+<!--header end--><!--header end-->
+<!--content start-->
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/searching.css?v=1.00">
+<style>
+    .filter {
+        border: 1px solid #DBDBDB;
+        padding-bottom: 10px;
+    }
+
+    .filter .type {
+        line-height: 36px;
+        height: 36px;
+    }
+
+    .filter b {
+        width: 100px;
+        color: #89898F;
+    }
+
+    .filter .type > * {
+        margin: 0 20px;
+    }
+
+    .filter span {
+        color: red;
+    }
+
+    .page ul{
+        margin: auto;
+        margin-left: 350px;
+    }
+    .page li{
+        height: 50px;
+
+        float: left;
+    }
+    .page span{
+        line-height: 32px;
+    }
+</style>
+<body>
+<div class="content wrapper clearfix">
+    <div class="searchIndex">
+        <div class="search-top">
+            <span>
+                {dede:field name='position'/}
+            </span>
+        </div>
+        <div class="search-main">
+            <!--需要修改-->
+            <div class="filter wrapper">
+                <div class="type">
+                    {dede:php}
+                    AddFilter(20,1,'jb');
+                    {/dede:php}
+                </div>
+                <div class="type">
+                    {dede:php}
+                    AddFilter(20,1,'fclx');
+                    {/dede:php}
+                </div>
+                <div class="type">
+                    {dede:php}
+                    AddFilter(20,1,'fbsj');
+                    {/dede:php}
+                </div>
+            </div>
+            <div class="searchBox">
+                <ul class="clearfix">
+                    <li class=""><a href="list.php?tid={dede:field.typeid /}">综合</a></li>
+                    <!--<li class="current"><a onclick="abilitySearch('3','1')">发布时间&nbsp;&nbsp;↓</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="policy-list clearfix wrapper">
+        <ul class="p-list clearfix">
+            <!--需要修改-->
+            {dede:list channelid='20' addfields='jb,fclx,fbsj' pagesize='5'}
+            <li class="p-li">
+                【<span class="level">
+                [field:jb/]
+            </span>】
+                <span class="p-title">
+                                <a title="内蒙古自治区发展和改革委员会关于内蒙古西部地区云计算数据中心有关扶持政策的通知"
+                                   href="[field:arcurl/]" target="_blank">[field:title/]</a>
+                </span>
+                <span class="level">发布日期：[field:stime /]</span>
+                <input id="searchOne" value=" qb" hidden="hidden" type="text">
+                <input id="searchtwo" value=" qb" hidden="hidden" type="text">
+                <input id="searchthree" value=" qb" hidden="hidden" type="text">
+                <input id="searchFour" value=" 1" hidden="hidden" type="text">
+            </li>
+            {/dede:list}
+        </ul>
+    </div>
+    <div class="page clearfix">
+        <div><ul class="clearfix">{dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}</ul></div>
+    </div> <!--分页显示-->
+</div>
+</body>
+
+<!--footer start-->
+
+{dede:include filename="footer.htm"/}
+<!--footer end--></html>

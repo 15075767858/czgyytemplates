@@ -1,0 +1,1183 @@
+<!--云资源交易中心-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<!--header start-->
+{dede:include filename="head.htm"/}
+<!--header start-->
+<style>
+
+</style>
+<script>
+    $(document).ready(function () {
+        $(".tab-menu span").click(function () {
+            var K = $(this).index();
+            $(this).siblings().removeClass("current");
+            $(this).addClass("current");
+            $(this).parents(".column-one").find(".one").hide();
+            $(this).parents(".column-one").find(".one").eq(K).fadeIn()
+        });
+        //$("#breakingnews").myScroll({speed: 3000, rowHeight: 100, moveHeight: 50, animateTime: 800});
+        //$("#breakingnews1").myScroll({speed: 3000, rowHeight: 50, moveHeight: 50, animateTime: 800});
+        var J = 1;
+        var F = $(".policy").length;
+        var B = setInterval(H, 4000);
+
+        function H() {
+            if (J == F) {
+                J = 0
+            }
+            $(".policy").stop().siblings().fadeOut(200).eq(J).fadeIn(1000);
+            $("#policySlide span").stop().eq(J).addClass("current").siblings().removeClass("current");
+            J++
+        }
+
+        $("#policySlide span").click(function () {
+            J = $(this).index();
+            H()
+        });
+        $("#policySlide").hover(function () {
+            clearInterval(B)
+        }, function () {
+            B = setInterval(H, 4000)
+        });
+        $(".policy").hover(function () {
+            clearInterval(B)
+        }, function () {
+            B = setInterval(H, 4000)
+        });
+        $(".myResource").each(function () {
+            if ($(this).find("ul li").size() <= 4) {
+                $(this).find(".slide").hide()
+            }
+        });
+        var C = setInterval(function () {
+            I(1)
+        }, 4000);
+        var D = setInterval(function () {
+            I(2)
+        }, 4000);
+        var A = setInterval(function () {
+            I(3)
+        }, 4000);
+        var G = setInterval(function () {
+            I(4)
+        }, 4000);
+
+        function I(K) {
+            if ($("#resource" + K).find("ul li").size() > 4) {
+                $("#resource" + K + " .center ul").stop().animate({"left": $("#resource" + K + " .center ul").position().left - 880 + "px"}, 1000);
+                $("#resource" + K + " .slide").find(".current").removeClass("current");
+                if ($("#resource" + K + " .center ul").position().left == 0) {
+                    $("#resource" + K + " .slide").find("span").eq(1).addClass("current")
+                }
+                if ($("#resource" + K + " .center ul").position().left == -880) {
+                    $("#resource" + K + " .center ul").stop().animate({"left": 0}, 1000);
+                    $("#resource" + K + " .slide").find("span").eq(0).addClass("current")
+                }
+            } else {
+                $("#resource" + K).find(".slide").hide()
+            }
+        }
+
+        $("#resource1 .center").hover(function () {
+            clearInterval(C)
+        }, function () {
+            C = setInterval(function () {
+                I(1)
+            }, 4000)
+        });
+        $("#resource2 .center").hover(function () {
+            clearInterval(D)
+        }, function () {
+            D = setInterval(function () {
+                I(2)
+            }, 4000)
+        });
+        $("#resource3 .center").hover(function () {
+            clearInterval(A)
+        }, function () {
+            A = setInterval(function () {
+                I(3)
+            }, 4000)
+        });
+        $("#resource4 .center").hover(function () {
+            clearInterval(G)
+        }, function () {
+            G = setInterval(function () {
+                I(4)
+            }, 4000)
+        });
+        $("#resource1 .slide span").hover(function () {
+            clearInterval(C);
+            var K = $(this).index();
+            E(K, 1)
+        }, function () {
+            C = setInterval(function () {
+                I(1)
+            }, 4000)
+        });
+        $("#resource2 .slide span").hover(function () {
+            clearInterval(D);
+            var K = $(this).index();
+            E(K, 2)
+        }, function () {
+            D = setInterval(function () {
+                I(2)
+            }, 4000)
+        });
+        $("#resource3 .slide span").hover(function () {
+            clearInterval(A);
+            var K = $(this).index();
+            E(K, 3)
+        }, function () {
+            A = setInterval(function () {
+                I(3)
+            }, 4000)
+        });
+        $("#resource4 .slide span").hover(function () {
+            clearInterval(G);
+            var K = $(this).index();
+            E(K, 4)
+        }, function () {
+            G = setInterval(function () {
+                I(4)
+            }, 4000)
+        });
+
+        function E(K, L) {
+            if (K == 0) {
+                $("#resource" + L + " .center ul").stop().animate({"left": 0}, 500)
+            } else {
+                if (K == 1) {
+                    $("#resource" + L + " .center ul").stop().animate({"left": "-880px"}, 500)
+                }
+            }
+            $("#resource" + L + " .slide").find(".current").removeClass("current");
+            $("#resource" + L + " .slide").find("span").eq(K).addClass("current")
+        }
+    });
+</script>
+<style>
+    @charset "UTF-8";
+    .btn {
+        height: 28px;
+        line-height: 18px;
+        text-align: center;
+        border: none;
+    }
+
+    .more {
+        top: 0;
+        float: right;
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        font-size: 12px;
+        color: #4d4a4b;
+        font-weight: 600;
+    }
+
+    .column-hd {
+        height: 68px;
+        border-bottom: 1px solid #b8b8b8;
+        color: #c4c4c4;
+    }
+
+    .column-hd .block-title {
+        display: inline-block;
+        padding: 0 10px;
+        height: 68px;
+        line-height: 68px;
+        font-size: 18px;
+        font-family: "微软雅黑", Tahoma, Geneva;
+        border-bottom: 4px solid #FEA711;
+        color: #4d4a4b;
+    }
+
+    .column-hd .block {
+        float: right;
+        margin-top: 24px;
+        margin-right: 60px;
+        font-weight: bold;
+    }
+
+    .column-hd .block a:hover {
+        color: #428bca;
+    }
+
+    .column-hd .wrapper {
+        position: relative;
+    }
+
+    .column-hd .wrapper .more {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        height: 68px;
+        line-height: 68px;
+        color: #4d4a4b;
+        font-weight: 600;
+    }
+
+    .tabHead {
+        height: 48px;
+        line-height: 48px;
+    }
+
+    .tab-menu {
+        position: relative;
+        font-size: 16px;
+        color: #fff;
+    }
+
+    .tabHead span:last-child {
+        padding: 0;
+        border: none;
+    }
+
+    .tabContent {
+        padding-top: 20px;
+    }
+
+    .column {
+        position: relative;
+        margin-top: 30px;
+        height: 480px;
+        background: url(../images/cloudCenter/mapBg.png) no-repeat 0 center;
+    }
+
+    .tabHead span {
+        font-size: 15px;
+        color: #4E484C;
+    }
+
+    .column .column-bd {
+        z-index: 100;
+        height: 480px;
+    }
+
+    .column-three .column1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(4, 19, 30, 0.6);
+    }
+
+    .column-three .mapBox {
+        float: left;
+        width: 740px;
+        margin-top: 40px;
+        height: 400px;
+    }
+
+    .column-three .mapBox img {
+        width: 740px;
+        height: 520px;
+    }
+
+    .column-three .mapInfo {
+        position: absolute;
+        margin-left: 740px;
+        margin-top: 100px;
+        width: 320px;
+        height: 280px;
+        border-radius: 10px;
+        background: #fff;
+    }
+
+    .column-three .mapInfo h4 {
+        padding-left: 60px;
+        width: 320px;
+        height: 50px;
+        line-height: 50px;
+        display: inline-block;
+        font-weight: 600;
+        background: #318BB7 url(../images/cloudCenter/mapTitleBg.png) no-repeat 20px center;
+        border-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        color: #fff;
+    }
+
+    .column-three .mapInfo ul li {
+        padding-left: 70px;
+        height: 38px;
+        line-height: 38px;
+        font-size: 14px;
+        color: #315974;
+        letter-spacing: 1px;
+        border-bottom: 1px dotted #aaa;
+        background: url(../images/cloudCenter/liBg.png) no-repeat 50px center;
+    }
+
+    .column-three .mapInfo ul li:last-child {
+        border-bottom: none;
+    }
+
+    .column-three .mapInfo ul li.noList {
+        padding: 0;
+        height: 220px;
+        line-height: 220px;
+        text-align: center;
+        background: none;
+    }
+
+    .column-four {
+        padding-top: 40px;
+        height: auto;
+        background: #F2F3F7;
+    }
+
+    .block-head {
+        height: 65px;
+        text-align: center;
+        color: #4d4a4b;
+    }
+
+    .block-head .english {
+        font-size: 13px;
+    }
+
+    .block-head .line {
+        margin-top: 10px;
+        width: 70px;
+        height: 12px;
+        border-bottom: 3px solid #FF6E0C;
+        display: inline-block;
+    }
+
+    .block-head .block-title {
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .column-four .column-bd {
+        padding: 20px 0 15px 0;
+        height: auto;
+    }
+
+    .column-four .column-hd .wrapper {
+        font-size: 14px;
+    }
+
+    .column-four .block-title {
+        cursor: pointer;
+    }
+
+    .myResource {
+        position: relative;
+        margin-bottom: 40px;
+    }
+
+    .resBox {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .resBox .center {
+        position: relative;
+        width: 860px;
+        height: 180px;
+        overflow: hidden;
+    }
+
+    .resBox .center ul {
+        width: 2640px;
+        position: absolute;
+        left: 0;
+    }
+
+    .resBox .slide {
+        bottom: -25px;
+        margin-left: 405px;
+        height: 15px;
+    }
+
+    .cItems li {
+        position: relative;
+        float: left;
+        margin-right: 20px;
+        width: 200px;
+        height: 180px;
+        border-bottom: 4px solid #318BB7;
+    }
+
+    .cItems li img {
+        width: 200px;
+        height: 176px;
+    }
+
+    .cItems li .bg img {
+        position: absolute;
+        width: 200px;
+        height: 36px;
+        bottom: 0;
+    }
+
+    .cItems li .bg span {
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #fff;
+    }
+
+    .column-five {
+        margin-top: 40px;
+        padding-top: 30px;
+        height: 450px;
+        background: url(/czgyy/uploads/allimg/181016/1_1923473351.png) no-repeat center;
+        background-size: 100% 100%;
+    }
+    .column-one {
+        margin:auto;
+        margin-top: 20px;
+        padding: 0 20px;
+        width: 50%;
+        height: 300px;
+        background: #227DBA;
+    }
+
+    .column-one .one {
+        float: right;
+        width: 510px;
+        height: 230px;
+        display: none;
+    }
+
+    .column-one .tabHead span {
+        cursor: pointer;
+    }
+
+    .column-one .one.current {
+        display: block;
+    }
+
+    .column-one .one-hd {
+        margin-top: 10px;
+        border-bottom: 1px solid #fff;
+        height: 60px;
+    }
+
+    .column-one .one-hd .tabHead {
+        float: right;
+        width: 510px;
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .column-one .one-hd .tabHead span {
+        padding: 0 5px 0 6px;
+        margin-right: 5px;
+        color: #fff;
+        font-size: 16px;
+        height: 59px;
+        line-height: 59px;
+        display: inline-block;
+    }
+
+    .column-one .one-hd .tabHead span:first-child {
+        padding-left: 0;
+    }
+
+    .column-one .one-hd .tabHead span.current {
+        border-bottom: 2px solid #fff;
+    }
+
+    .column-one .one-hd .tabHead .more {
+        top: 0;
+        float: right;
+        margin-right: 20px;
+        display: block;
+        height: 60px;
+        font-size: 14px;
+        line-height: 60px;
+        color: #fff;
+        font-weight: normal;
+    }
+
+    .one ul {
+        margin-top: 10px;
+    }
+
+    .one li {
+        padding-left: 20px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 14px;
+        background: url(../images/cloudCenter/liBg2.png) no-repeat left;
+    }
+
+    .one li a {
+        color: #fff;
+    }
+
+    .column-two {
+        position: relative;
+        float: right;
+        margin-top: 20px;
+        width: 50%;
+        height: 300px;
+        background: url(../images/cloudCenter/bg.jpg) no-repeat center;
+    }
+
+    .column-two .cover {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .column-two .two {
+        position: absolute;
+        top: 0;
+        height: 275px;
+        width: 550px;
+        overflow: hidden;
+        float: left;
+    }
+
+    .column-two .policy {
+        top: 0;
+        position: absolute;
+        margin-top: 25px;
+        margin-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    .column-two .policy.item1 {
+        left: 0;
+    }
+
+    .column-two .policy.item2, .column-two .policy.item3 {
+        display: none;
+    }
+
+    .column-two .policy dl {
+        margin-left: 20px;
+        width: 470px;
+        color: #fff;
+    }
+
+    .column-two .policy dl dt {
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .column-two .policy dl dd {
+        height: 130px;
+        line-height: 25px;
+        text-indent: 2em;
+        font-size: 14px;
+    }
+
+    .column-two .quick {
+        margin-left: 215px;
+        margin-top: 10px;
+        width: 120px;
+        height: 35px;
+        background: #1FAEF4;
+        color: #fff;
+        border: none;
+    }
+
+    .slide {
+        position: absolute;
+        bottom: 10px;
+        margin-left: 235px;
+    }
+
+    .slide span {
+        margin-top: 5px;
+        width: 20px;
+        display: inline-block;
+        border-bottom: 4px solid #B4B4B4;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    .slide span.current {
+        border-bottom: 4px solid #FF6E0C;
+    }
+
+    .newsShow {
+        height: 50px;
+        line-height: 50px;
+        border-top: 1px solid #b8b8b8;
+        background: #E5E5E7;
+        border-bottom: 1px solid #b8b8b8;
+    }
+
+    .notice {
+        position: relative;
+        padding-left: 110px;
+        height: 50px;
+        line-height: 50px;
+        overflow: hidden;
+        background: url(../images/cloudCenter/noice.png) no-repeat 0 center;
+    }
+
+    .notice i {
+        position: absolute;
+        left: 40px;
+        top: 0;
+        width: 70px;
+        height: 50px;
+        font-size: 13px;
+        color: #000;
+        font-style: normal;
+    }
+
+    .notice ul {
+        width: 1050px;
+    }
+
+    .notice1 ul {
+        width: 990px;
+    }
+
+    .notice ul li {
+        float: left;
+        height: 50px;
+        line-height: 50px;
+        width: 525px;
+    }
+
+    .notice1 ul li {
+        width: 920px;
+    }
+
+    .notice ul li a {
+        padding: 0;
+        height: 50px;
+        line-height: 50px;
+        font-size: 13px;
+        text-decoration: none;
+        color: #333;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    .easing a, .easing span {
+        transition: .25s linear;
+        -moz-transition: .25s linear;
+        -webkit-transition: .25s linear;
+    }
+</style>
+<!--header end--><!--header end-->
+<!--content start-->
+<body>
+
+{dede:list tid='93'}
+<li>[field:title/]</li>
+{/dede:list}
+
+
+{dede:arclist typeid='92'}
+<a href='[field:arcurl/]'>[field:title/]</a>
+<br>
+{/dede:arclist}
+<br>
+{dede:arclist typeid='93'}
+<a href='[field:arcurl/]'>[field:title/]</a>
+<br>
+{/dede:arclist}
+<br>
+{dede:arclist typeid='94'}
+<a href='[field:arcurl/]'>[field:title/]</a>
+<br>
+{/dede:arclist}
+<div class="column-four">
+    <div class="column-hd">
+        <div class="wrapper">
+            <span class="block-title">云资源交易</span>
+            <span class="block">
+                <a href="/member/cloundcenter_add_demand.jspx?frontStatus=1" target="_blank">我有需求</a>
+            </span>
+            <a href="/yzyjyzxYzyck/index.jhtml" target="_blank" class="more">更多></a>
+        </div>
+    </div>
+    <div class="column-bd wrapper">
+        <div class="myResource" id="resource1">
+            <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png" alt="">
+            <div class="resBox">
+                <div class="center">
+                    <ul class="cItems clearfix">
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180702/3280.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="EI基础平台">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>EI基础平台</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180702/3281.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="EI大数据">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>EI大数据</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180629/3268.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="云硬盘（EVS）、云硬盘备份（VBS）、专属存储服务（DSS）">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>云硬盘（EVS）、云硬盘备份（VBS）、专属存储服务（DSS）</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180629/3269.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="对象存储服务（OBS）、弹性文件服务（SFS）、数据快递服务（DES）">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>对象存储服务（OBS）、弹性文件服务（SFS）、数据快递服务（DES）</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180629/3270.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="内容分发网络（CDN）、专属企业存储服务（DESS）">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>内容分发网络（CDN）、专属企业存储服务（DESS）</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180622/3244.html" target="_blank">
+                                <img src="/u/cms/www/201806/22093345zcvd.jpg" alt="对象存储">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>对象存储</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180622/3245.html" target="_blank">
+                                <img src="/u/cms/www/201806/22094048y522.jpg" alt="弹性块存储">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>弹性块存储</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180622/3246.html" target="_blank">
+                                <img src="/u/cms/www/201806/22094312yrqs.jpg" alt="文件存储">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>文件存储</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="slide">
+                    <span class="current"></span><span></span>
+                </div>
+            </div>
+            <div class="imgSlide"></div>
+        </div>
+        <div class="myResource" id="resource2">
+            <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png" alt="">
+            <div class="resBox">
+                <div class="center">
+                    <ul class="cItems clearfix">
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180629/3261.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="云计算-弹性服务器（ECS）">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>云计算-弹性服务器（ECS）</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180629/3262.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="FPJA加速云服务器">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>FPJA加速云服务器</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180629/3263.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="GPU加速云服务器">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>GPU加速云服务器</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180629/3264.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="裸金属服务器（BMS）">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>裸金属服务器（BMS）</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180629/3265.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="专属云（DeC）">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>专属云（DeC）</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180629/3266.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="云服务器备份、云容器引擎、弹性伸缩">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>云服务器备份、云容器引擎、弹性伸缩</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180629/3267.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="函数服务FunctionStage、镜像服务（IMS）">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>函数服务FunctionStage、镜像服务（IMS）</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180622/3242.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="弹性云主机">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>弹性云主机</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="slide">
+                    <span class="current"></span><span></span>
+                </div>
+            </div>
+        </div>
+        <div class="myResource" id="resource3">
+            <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png" alt="">
+            <div class="resBox">
+                <div class="center">
+                    <ul class="cItems clearfix">
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180702/3278.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="云数据库">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>云数据库</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/yzyjyzxYzyck/cloudcenter_resource_manager_info.jspx?managerId=72" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="云大数据存储与分析服务InCMR">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>云大数据存储与分析服务InCMR</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180517/3167.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="云应用引擎InCAE">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>云应用引擎InCAE</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180517/3168.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="云数据库InDBSQLServer">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>云数据库InDBSQLServer</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180517/3169.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="云数据库InDB-MySQL">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>云数据库InDB-MySQL</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20171213/2848.html" target="_blank">
+                                <img src="/u/cms/www/201712/13145258cbk1.jpg" alt="分布式数据库中间件DDM">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>分布式数据库中间件DDM</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20171208/2817.html" target="_blank">
+                                <img src="/u/cms/www/201712/08114336ow8r.jpg" alt="关系型数据库RDS">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>关系型数据库RDS</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20171208/2825.html" target="_blank">
+                                <img src="/u/cms/www/201712/08163430a48n.jpg" alt="分布式缓存服务DCS">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>分布式缓存服务DCS</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="slide">
+                    <span class="current"></span><span></span>
+                </div>
+            </div>
+            <div class="imgSlide"></div>
+        </div>
+        <div class="myResource" id="resource4">
+            <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png" alt="">
+            <div class="resBox">
+                <div class="center">
+                    <ul class="cItems clearfix">
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180702/3276.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="云监控服务（CES）、统一身份认证服务（IAM）、云审计服务（CTS）">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>云监控服务（CES）、统一身份认证服务（IAM）、云审计服务（CTS）</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180702/3277.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="云报表服务（CRS）、云日志服务（LTS）、标签管理服务（TMS）">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>云报表服务（CRS）、云日志服务（LTS）、标签管理服务（TMS）</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180702/3279.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="迁移">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>迁移</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180702/3282.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="EI视觉认知">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>EI视觉认知</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180702/3283.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="EI语言语义">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>EI语言语义</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180702/3284.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="EI行业场景">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>EI行业场景</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180702/3285.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="应用服务">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>应用服务</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html/yzyjyzxYzyck/20180702/3286.html" target="_blank">
+                                <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                     alt="云通信">
+                                <div class="bg">
+                                    <img src="http://www.nmggyy.com/r/cms/www/default/resources/images/cloudCenter/title1.png"
+                                         alt="">
+                                    <span>云通信</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="slide">
+                    <span class="current"></span><span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新闻播报信息-->
+    <div class="newsShow">
+        <div class="wrapper notice easing" id="breakingnews">
+            <i>特殊需求：</i>
+            <ul class="clearfix">
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="column-five clearfix">
+    <div class="column-hd" style="text-align: center;border-bottom: none;">
+        <div class="wrapper">
+            <span class="block-title">云计算政策信息</span>
+        </div>
+    </div>
+    <div class="wrapper">
+        <!--云计算政策信息-->
+        <div class="column-one">
+            <div class="one-hd">
+                <div class="tabHead">
+                    <div class="tab-menu">
+                        <span class="current">国家政策</span>|
+                        <span>自治区政策</span>|
+                        <span>盟市政策</span>
+                        <a href="/yzyjyzxYjszc/index.jhtml" target="_blank" class="more">更多></a>
+                    </div>
+                </div>
+            </div>
+            <div class="one current">
+                <ul>
+                    <li>
+                        <a href="/html/yzyjyzxYjszc/20170614/2015.html" target="_blank">【2015-09-05】&nbsp;国务院关于印发促进大数据发展...</a>
+                    </li>
+                    <li>
+                        <a href="/html/yzyjyzxYjszc/20170614/2014.html" target="_blank">【2015-01-30】&nbsp;国务院关于促进云计算创新发展...</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="one">
+                <ul>
+                    <li>
+                        <a href="/html/yzyjyzxYjszc/20180511/3136.html" target="_blank">【2018-04-29】&nbsp;内蒙古自治区人民政府办公厅关...</a>
+                    </li>
+                    <li>
+                        <a href="/html/yzyjyzxYjszc/20180319/3031.html" target="_blank">【2018-03-06】&nbsp;内蒙古自治区大数据发展管理局...</a>
+                    </li>
+                    <li>
+                        <a href="/html/yzyjyzxYjszc/20180124/2910.html" target="_blank">【2017-12-28】&nbsp;内蒙古自治区人民政府办公厅关...</a>
+                    </li>
+                    <li>
+                        <a href="/html/yzyjyzxYjszc/20170614/2013.html" target="_blank">【2016-11-10】&nbsp;呼和浩特市关于促进大数据发展...</a>
+                    </li>
+                    <li>
+                        <a href="/html/yzyjyzxYjszc/20170614/2012.html" target="_blank">【2015-05-28】&nbsp;内蒙古自治区人民政府关于印发...</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="one">
+                <ul>
+                </ul>
+            </div>
+        </div>
+        <!--可申请政策信息-->
+
+    </div>
+</div>
+
+</body>
+
+<!--footer start-->
+
+{dede:include filename="footer.htm"/}
+<!--footer end--></html>

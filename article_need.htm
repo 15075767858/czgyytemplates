@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--header start-->
+{dede:include filename="head.htm"/}
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/abilityPreview.css"/>
+<!--header start-->
+
+<!--header end--><!--header end-->
+<!--content start-->
+<body>
+<div class="content clearfix">
+
+    <div class="ability">
+        <div class="showAbility wrapper clearfix">
+            <div class="showImg">
+                <div id="bigImg" class="bigImg">
+                    <img class="current" id="defimg" src="{dede:field.litpic/}">
+                </div>
+                <div class="left">
+                    <img src="{dede:global.cfg_templets_skin/}/images/abilityPreview/left.png">
+                </div>
+                <div class="smallImg clearfix">
+                    <div id="smallImg" class="images">
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="{dede:global.cfg_templets_skin/}/images/abilityPreview/right.png">
+                </div>
+            </div>
+            <div class="showMessage">
+                <div class="titleDiv">
+                    <p class="title"><a title="太仆寺旗电子商务产业园建设">{dede:field.title/}</a></p>
+                </div>
+                <div class="descDiv">
+                    <span>发布日期：</span><span>{dede:field.startdate function="MyDate('Y-m-d',@me)/}</span><br>
+                    <span>截止日期：</span><span>{dede:field.enddate function="MyDate('Y-m-d',@me)/}</span><br>
+                    <span>联系人：</span><span>{dede:field.linkman /}</span><br>
+                    <span>电话：</span><span>{dede:field.linkphone /}</span><br>
+                    <span>邮箱：</span><span>{dede:field.linkmail /}</span><br>
+
+                </div>
+                {dede:memberinfos}
+                <button onclick="location.href='/czgyy/member/pm.php?dopost=send&uid=[field:userid /]'">我要报价</button>
+                {/dede:memberinfos}
+            </div>
+            <div class="showCompany">
+
+
+                <div class="company">
+                    {dede:memberinfos}
+                    <span class="title" style="color: #286090;cursor:pointer;z-index:999" onclick="cyrh()">[field:company /]</span>
+                    <br>
+                    <!--<span>企业电话：</span><span></span><br>-->
+                    <span>企业地址：</span>
+                    <span title="[field:address/]">
+                        [field:address/]
+                    </span>
+
+                    <br>
+
+                    <div class="navTop" id="navTop1">
+                        <span>联系人：</span><span title="[field:linkman/]">[field:linkman /]</span><br>
+                        <span>联系电话：</span><span style="color: #286090">[field:tel /]</span><br>
+
+                        <div class="text-center" id="conCyrh" ><button onclick="location.href='/czgyy/member/pm.php?dopost=send&uid=[field:userid /]'">在线联系</button></div>
+                    </div>
+                    <script src="/czgyy/plus/uid_logintag.php" language="javascript"></script>
+
+                    <script >
+                        $(document).ready(function () {
+                            if($('login').length){
+                                $('#navTop2').hide()
+                            }else{
+                                $('#navTop1').hide()
+                            }
+                        })
+                    </script>
+
+                    <div class="navTop2" id="navTop2">
+                        <div style="color: #4d4a4b;font-size: 16px;font-weight: 600;">请&nbsp;&nbsp;<a class="btnLogin" style="width: 50px" href="/czgyy/member/index.php">登录</a>&nbsp;&nbsp;后查看联系信息</div>
+                    </div>
+
+                    <br><br><br>
+                    {/dede:memberinfos}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="showKinds clearfix">
+
+        <div class="kindsMessage wrapper">
+            <div class="current wrapper" style="height: auto;">
+
+                <!--</div>-->
+                <div style="margin: 20px">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="showKinds clearfix">
+        <div class="kingsTop wrapper">
+            <span class="current">需求描述</span>
+        </div>
+        <div class="kindsMessage wrapper">
+            <ul class="current wrapper" style="height: 130px;margin-left: 14px;">
+                <li>
+                    <label>要求交货日期：</label>
+                    <div class="inputs">
+                        {dede:field.givedate function="MyDate('Y-m-d',@me)/}
+                    </div>
+                </li>
+                <li>
+                    <label>是否需要发票：</label>
+                    <div class="inputs">
+                        {dede:field.invoice/}                    </div>
+                </li>
+                <li>
+                    <label>运费承担商：</label>
+                    <div class="inputs">
+                        {dede:field.freight/}                     </div>
+                </li>
+
+
+            </ul>
+            <br><br>
+            <div style="margin-left: 30px;">
+                <h3>&nbsp;<label>补充说明：</label></h3>
+                <div id="contentTxtHere" style="display:block">
+                    <p></p><p>{dede:field.supins/}<br></p><p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+</div>
+</body>
+
+<!--footer start-->
+<script type="text/javascript" charset="utf-8" src="{dede:global.cfg_templets_skin/}/js/abilityPreview.js"></script>
+{dede:include filename="footer.htm"/}
+<!--footer end--></html>

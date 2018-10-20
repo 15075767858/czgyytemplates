@@ -1,0 +1,240 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>{dede:global.cfg_webname/}</title>
+    <meta name=”Keywords” Content="{dede:global.cfg_keywords/}">
+    <meta name=”Description” Content="{dede:global.cfg_description/}">
+    <link rel="shortcut icon" href="/r/cms/www/default/resources/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/searching.css"/>
+    <link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/index_supply_commservice.css"/>
+    <style>
+        .tableBody table td:last-child a:hover {
+            color: #2EBEEF;
+        }
+
+        .zhongtie {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .zhongtie img {
+            width: 100%;
+            margin-top: 1px;
+            transition: all 0.6s;
+        }
+
+        .zhongtie img:hover {
+            transform: scale(1.11);
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/html5media/1.1.8/html5media.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!--<?php echo $cfg_ml->M_UserName?>-->
+
+<!--header start-->
+<div id="header">
+    <div class="topbar">
+        <div class="wrapper  clearfix">
+            <div class="top-left">
+                <label>您好，欢迎来到{dede:global.cfg_webname/}！</label>
+                <script src="/r/cms/jquery.js" type="text/javascript"></script>
+                <script src="/r/cms/front.js" type="text/javascript"></script>
+                <div id="loginCsiDiv"></div>
+                <script type="text/javascript">
+                    $(function () {
+                        // Cms.loginCsi("", "loginCsiDiv", {"returnUrl": "http://nmggyy.com:80/"});
+                    });
+                </script>
+                <!--                <a class="btnLogin" href="/login.jspx">登录</a><a  class="btnRegister" href="/register.jspx">注册</a>
+                 -->
+            </div>
+            <div class="top-right">
+                <div class="toplink fl">
+                    <ul>
+                        <!--<li><a href="/channel/aboutUs.jspx" target="_blank">关于工业云</a></li>-->
+                        <!--<li><a href="/downloadfile.jspx">帮助手册</a></li>-->
+                        <li>客服中心：{dede:global.cfg_kefudianhua/}</li>
+                        <li>
+                            <span class="wechat">微信公众号
+                            <img src="{dede:global.cfg_templets_skin/}/images/gzh.png">
+                            </span>
+                        </li>
+                        <li class="friend">
+                            <div class="link"><span>友情链接</span></div>
+                            <ul class="linkUl">
+                                <li><a href="http://www.casicloud.com" target="_blank">航天云网</a></li>
+                                <li><a href="http://www.jxicloud.com/" target="_blank">江西航天云网</a></li>
+                                <li><a href="http://www.gz-icloud.com.cn/" target="_blank">贵州航天云网</a></li>
+                                <li><a href="http://www.能源设备网.cn/" target="_blank">能源设备网</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--<span class="fr">微信公众号</span>-->
+            </div>
+        </div>
+    </div>
+    <div class="logobar wrapper">
+        <a href="/"><img class="logo" src="{dede:global.cfg_templets_skin/}/images/logo1.png" alt="logo"></a>
+        <div class="menubar">
+            <script src="plus/uid.php" language="javascript"></script>
+            <div class="search">
+                <form action="{dede:global.cfg_indexurl/}/plus/search.php" target="_blank" id="searchForm">
+                    <input type="text" placeholder="请输入搜索内容" name="q" value="" maxlength="50" autocomplete="off"
+                           class="searchCon">
+                    <input type="submit" value="" class="searchMenu">
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="menu1">
+
+        <ul id="menu" class="wrapper clearfix">
+
+
+            <li class="current"><a class="underline" href="/">首页</a></li>
+            <li class="yiji">
+                {dede:type typeid='1'}
+                <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                {/dede:type}
+                <ul>
+                    {dede:channelartlist typeid='1' type='sun' noself='yes'}
+                    <li class="erji">
+                        <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                        <ul>
+                            {dede:channel noself='yes' }
+                            <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                            {/dede:channel}
+                        </ul>
+                    </li>
+                    {/dede:channelartlist}
+                </ul>
+            </li>
+            <li class="yiji">
+                {dede:type typeid='2'}
+                <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                {/dede:type}
+                <ul>
+                    {dede:channelartlist typeid='2' type='sun' noself='yes'}
+                    <li class="erji">
+                        <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                        <ul>
+                            {dede:channel noself='yes' }
+                            <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                            {/dede:channel}
+                        </ul>
+                    </li>
+                    {/dede:channelartlist}
+                </ul>
+            </li>
+            <li class="yiji">
+                {dede:type typeid='3'}
+                <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                {/dede:type}
+                <ul>
+                    {dede:channelartlist typeid='3' type='sun' noself='yes'}
+                    <li class="erji">
+                        <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                        <ul>
+                            {dede:channel noself='yes' }
+                            <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                            {/dede:channel}
+                        </ul>
+                    </li>
+                    {/dede:channelartlist}
+                </ul>
+            </li>
+            <li class="yiji">
+                {dede:type typeid='4'}
+                <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                {/dede:type}
+                <ul>
+                    {dede:channelartlist typeid='4' type='sun' noself='yes'}
+                    <li class="erji">
+                        <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                        <ul>
+                            {dede:channel noself='yes' }
+                            <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                            {/dede:channel}
+                        </ul>
+                    </li>
+                    {/dede:channelartlist}
+                </ul>
+            </li>
+            <li class="yiji">
+                {dede:type typeid='5'}
+                <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                {/dede:type}
+                <ul>
+                    {dede:channelartlist typeid='5' type='sun' noself='yes'}
+                    <li class="erji">
+                        <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                        <ul>
+                            {dede:channel noself='yes' }
+                            <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                            {/dede:channel}
+                        </ul>
+                    </li>
+                    {/dede:channelartlist}
+                </ul>
+            </li>
+            <li class="yiji">
+                {dede:type typeid='6'}
+                <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                {/dede:type}
+                <ul>
+                    {dede:channelartlist typeid='6' type='sun' noself='yes'}
+                    <li class="erji">
+                        <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                        <ul>
+                            {dede:channel noself='yes' }
+                            <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                            {/dede:channel}
+                        </ul>
+                    </li>
+                    {/dede:channelartlist}
+                </ul>
+            </li>
+            <li class="yiji">
+                {dede:type typeid='7'}
+                <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                {/dede:type}
+                <ul>
+                    {dede:channelartlist typeid='7' type='sun' noself='yes'}
+                    <li class="erji">
+                        <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                        <ul>
+                            {dede:channel noself='yes' }
+                            <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                            {/dede:channel}
+                        </ul>
+                    </li>
+                    {/dede:channelartlist}
+                </ul>
+            </li>
+            <!--  {dede:channelartlist type='top' row=7 }
+              <li>
+                  <a class="underline" href="javascript:volid(0);">{dede:field name='typename'/} </a>
+                  <ul>
+                      {dede:channel type='son'}
+                      <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                      {/dede:channel}
+                  </ul>
+
+              </li>
+              {/dede:channelartlist}
+  -->
+        </ul>
+    </div>
+</div>
+<!--header end-->

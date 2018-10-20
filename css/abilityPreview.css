@@ -1,0 +1,898 @@
+@charset "UTF-8";
+.search-top {
+    margin: 20px auto 10px auto;
+}
+
+.search-top a {
+    padding-right: 15px;
+    font-size: 14px;
+    margin: auto 2px;
+    background: url(../images/abilityPreview/down.png) no-repeat right center;
+}
+
+.search-top .current {
+    color: #333;
+    background: none;
+}
+
+.showAbility {
+    height: auto;
+}
+
+.showAbility button {
+    width: 120px;
+    height: 33px;
+    line-height: 33px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.ability {
+    height: auto;
+    border-top: 1px solid #ccc;
+}
+
+.showImg {
+    float: left;
+    width: 38%;
+    padding-top: 30px;
+}
+
+.showImg .bigImg {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 15px;
+}
+
+.showImg .bigImg img {
+    width: 100%;
+    height: 300px;
+    display: none;
+}
+
+.showImg .bigImg .current {
+    display: block;
+}
+
+.showImg .smallImg {
+    width: 354px;
+    height: 60px;
+    overflow: hidden;
+    text-align: center;
+    display: inline-block;
+}
+
+.showImg .smallImg .images {
+    float: left;
+    height: 60px;
+    width: auto;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.showImg .smallImg .images img {
+    width: 86px;
+    height: 60px;
+}
+
+.showImg .smallImg .current {
+    border: 2px solid #F41B0D;
+}
+
+.left {
+    float: left;
+    width: 32px;
+    height: 60px;
+    padding-top: 7px;
+}
+
+.right {
+    float: right;
+    width: 32px;
+    height: 60px;
+    padding-top: 7px;
+}
+
+.left:hover, .right:hover {
+    cursor: pointer;
+}
+
+.showMessage {
+    float: left;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 38%;
+    height: 480px;
+    padding-top: 30px;
+}
+
+.showMessage .titleDiv {
+    width: 100%;
+}
+
+.showMessage .title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.showMessage span {
+    font-size: 14px;
+    margin-right: 10px;
+    line-height: 30px;
+    display: inline-block;
+    color: #000;
+    letter-spacing: 1px;
+    font-family: "微软雅黑";
+}
+
+.showMessage .price {
+    font-size: 30px;
+    color: #B10000;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 600;
+}
+
+.showMessage button {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    margin-left: -75px;
+    background: #318CB8;
+}
+
+.showMessage button:hover {
+    background: #38A2D5;
+}
+
+.showMessage .areaZone {
+    height: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000;
+}
+
+.showMessage .areaZone label {
+    margin-right: 10px;
+    line-height: 30px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.showCompany {
+    float: right;
+    width: 24%;
+    height: auto;
+    min-height: 480px;
+    border-left: 1px solid #ccc;
+}
+
+.showCompany .company {
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.showCompany .company {
+    height: 160px;
+    padding-top: 25px;
+}
+
+.showCompany .company .fun {
+    padding-left: 25px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #EEBA5E;
+    background: url(../images/abilityPreview/tip.png) no-repeat 1px;
+}
+
+.showCompany .company a {
+    margin-top: 20px;
+    width: 240px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    display: inline-block;
+    color: #fff;
+    background: #318CB8;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.showCompany .company a:hover {
+    background: #38A2D5;
+}
+
+.showCompany .company button {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background: #318CB8 url(../images/abilityPreview/link.png) no-repeat 15px;
+}
+
+.showCompany .company div b {
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+.showCompany span {
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    color: #000;
+}
+
+.showCompany .company .title {
+    font-size: 16px;
+    color: #000;
+    height: auto;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.showCompany .navTop {
+    width: 100%;
+    margin: 8px 0;
+    border-bottom: 1px dashed #000;
+}
+
+.showKinds {
+    height: auto;
+}
+
+.kingsTop {
+    height: 50px;
+    line-height: 50px;
+    font-size: 17px;
+    border-top: 1px solid #A3A8AB;
+    border-bottom: 1px solid #A3A8AB;
+    border-right: 1px solid #A3A8AB;
+    border-left: 1px solid #ccc;
+    background: #EEF3F6;
+}
+
+.kingsTop span {
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    color: #000;
+    cursor: pointer;
+}
+
+.kingsTop .current {
+    color: #1B698F;
+    background: #fff;
+    border-top: 3px solid #0B6693;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.kingsTop span:first-child {
+    border-left: none;
+}
+
+.kingsTop b {
+    color: #1B698F;
+}
+
+.kindsMessage {
+    height: auto;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-top: none;
+}
+
+.kindsMessage .wrapper {
+    display: none;
+    height: auto;
+    padding-left: 10px;
+    font-size: 14px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.kindsMessage .current {
+    display: block;
+}
+
+.kindsMessage h3 {
+    font-size: 14px;
+    font-family: "Microsoft YaHei", 微软雅黑;
+}
+
+.showLike {
+    height: auto;
+    position: relative;
+}
+
+.showLike .likeMessage {
+    position: relative;
+    height: auto;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding-top: 40px;
+    overflow: hidden;
+    border-top: none;
+}
+
+.showLike .likeMessage ul {
+    width: 200%;
+}
+
+.showLike .likeMessage li {
+    float: left;
+    width: 160px;
+    margin: 20px;
+}
+
+.showLike .likeMessage li dt {
+    margin-top: 5px;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.showLike .likeMessage li dd {
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.showLike .likeMessage li dd.price {
+    color: #B10000;
+    font-weight: 600;
+}
+
+.showLike .imgPage {
+    position: absolute;
+    display: none;
+    top: 20px;
+    right: 20px;
+    font-size: 14px;
+}
+
+.showLike .likeMessage .likeImg {
+    height: 240px;
+    width: 1000px;
+    overflow: hidden;
+}
+
+.showLike .imgPage .pagebar {
+    margin-left: 5px;
+    height: 18px;
+    line-height: 18px;
+    width: 20px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    background: #2E8BB6;
+    color: #fff;
+}
+
+.likeImg img {
+    width: 160px;
+    height: 130px;
+}
+
+.showLike .likeMessage .prev {
+    float: left;
+    width: 30px;
+    margin: 70px 10px auto 10px;
+    cursor: pointer;
+}
+
+.showLike .likeMessage .next {
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.comments {
+    margin-left: 25px;
+    width: 1030px;
+}
+
+.comments-text {
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+    font-size: 14px;
+    border-color: #ddd;
+}
+
+.submit-content {
+    width: 1030px;
+    height: 40px;
+    text-align: left;
+    font-size: 14px;
+    background-color: #EEF3F6;
+}
+
+.submit-content input {
+    margin-left: 5px;
+    width: 120px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.submit-content span {
+    height: 40px;
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+.submit-content i {
+    color: #ACACAC;
+    font-style: normal;
+}
+
+.submit-content img {
+    width: 100px;
+    height: 25px;
+    margin: 5px 5px;
+}
+
+.comments .submit-on, .comments .submit-out {
+    float: right;
+    margin-top: 5px;
+    margin-right: 10px;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background: #318BB7;
+    color: #fff;
+}
+
+.down {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+}
+
+.down .tips {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.down a {
+    color: #3077B9;
+    margin-left: 3px;
+    border-bottom: 1px solid #3077B9;
+}
+
+.submit-content .error {
+    color: red;
+    font-size: 13px;
+    font-weight: 400;
+    margin: auto 10px;
+}
+
+.comments .title-more {
+    position: relative;
+    margin-top: 20px;
+}
+
+.comments .title-more h3 {
+    border-bottom: 1px dashed #ccc;
+    height: 50px;
+    line-height: 50px;
+}
+
+.comments .title-more h3 span {
+    padding-left: 10px;
+    border-left: 3px solid #318BB7;
+}
+
+.comments .title-more a {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    display: inline-block;
+    background: #318BB7;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.comments .title-more a:hover {
+    background: #38A2D5;
+}
+
+.item-right .time {
+    padding-right: 12px;
+    margin-bottom: 10px;
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+}
+
+.card {
+    display: inline-block;
+    color: #000;
+}
+
+.card .card-label {
+    margin-right: 20px;
+    color: #939190;
+}
+
+.item-right .time .replay {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    color: #00A0E9;
+}
+
+.closeReplay {
+    margin: 10px auto;
+    width: 100%;
+    background: #EEF3F6;
+}
+
+.closeReplay .message {
+    border-bottom: 1px dashed #ccc;
+}
+
+.closeReplay .message:last-child {
+    border-bottom: none;
+}
+
+.closeReplay img {
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.closeReplay .reMsg {
+    margin-top: -50px;
+    padding-left: 70px;
+    padding-right: 20px;
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.closeReplay .message .user {
+    font-size: 14px;
+    color: #00A0E9;
+}
+
+.replayDt {
+    padding-right: 20px;
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+}
+
+.SDemandObj_table {
+    margin: 20px auto 40px auto;
+    width: 95%;
+    border: 1px solid #ddd;
+}
+
+.SDemandObj_table thead tr {
+    height: 35px;
+    line-height: 35px;
+    font-weight: 400;
+    color: #fff;
+    background: #318CB8;
+}
+
+.SDemandObj_table thead tr th {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.SDemandObj_table tbody tr {
+    height: 30px;
+    line-height: 30px;
+}
+
+.SDemandObj_table tbody tr input {
+    width: 90%;
+    height: 30px;
+    border: none;
+    background: none;
+    font-size: 12px;
+    text-align: center;
+}
+
+.SDemandObj_table tbody tr td {
+    text-align: center;
+}
+
+.demand-info {
+    margin: auto 10px;
+    font-size: 14px;
+}
+
+.demand-info li {
+    height: 30px;
+    line-height: 20px;
+    width: 500px;
+    float: left;
+    padding: 0 10px;
+}
+
+.demand-info li label {
+    width: 100px;
+    text-align: left;
+}
+
+.demand-info li .inputs {
+    float: right;
+    height: 40px;
+    width: 380px;
+}
+
+#contentTxtHere {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.searchIndex1 .search-top {
+    padding-left: 20px;
+    height: 45px;
+    line-height: 45px;
+    margin: 30px auto 10px auto;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    background: #318CB8;
+}
+
+.searchIndex1 .search-top span a {
+    padding-right: 0;
+    margin: 0 5px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    background: none;
+}
+
+.notice {
+    margin: 25px auto;
+    border: 1px solid #eee;
+    border-top: 2px solid #bbb;
+}
+
+.noticeTitle {
+    min-height: 110px;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin: 0 50px;
+}
+
+.titleName {
+    font-size: 24px;
+    color: #434343;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.noticeSource {
+    text-align: center;
+    padding-top: 12px;
+    margin-bottom: 20px;
+}
+
+.sourceTitle {
+    display: inline-block;
+    text-align: center;
+    font-family: "Microsoft Yahei";
+}
+
+.noticeSource .title {
+    margin-right: 50px;
+}
+
+.noticeSource .sourceTitle span {
+    color: #197af8;
+}
+
+.noticeInfo {
+    padding: 20px 60px;
+    line-height: 28px;
+}
+
+.noticeDesc {
+    color: #263142;
+    line-height: 32px;
+    font-size: 14px;
+    text-indent: 2em;
+}
+
+.bid-type {
+    margin-top: 10px;
+    height: 60px;
+    border-bottom: 1px solid #b8b8b8;
+    color: #c4c4c4;
+}
+
+.bid-type .head {
+    display: inline-block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    font-family: "微软雅黑", Tahoma, Geneva;
+    border-bottom: 4px solid #2D88B4;
+    color: #000;
+}
+
+.bid-type .wrapper {
+    position: relative;
+}
+
+.bid-info {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-top: none;
+}
+
+.bid-title {
+    height: auto;
+    margin: 0 50px 30px 50px;
+}
+
+.bid-title .titleName {
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+}
+
+.bid-title .bid-tip {
+    text-align: center;
+    padding-top: 12px;
+}
+
+.bid-tip .sourceTitle {
+    display: inline-block;
+    text-align: center;
+}
+
+.bid-detail {
+    padding: 10px 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #000;
+}
+
+.bid-detail table td {
+    padding: 5px 0 5px 10px;;
+    text-align: left;
+}
+
+.bid-detail .special {
+    color: #0B6E9C;
+}
+
+.bid {
+    padding: 20px 10px;
+    min-height: 300px;
+    line-height: 28px;
+}
+
+.soft-left {
+    float: left;
+    margin: 20px auto;
+    width: 400px;
+    height: 300px;
+}
+
+.soft-left img {
+    width: 400px;
+    height: 300px;
+}
+
+.soft-right {
+    float: right;
+    margin: 20px auto;
+    width: 660px;
+    height: 300px;
+    background: url(/czgyy/templets/czgyy/images/software.jpg) no-repeat center;
+    background-size: 100% 100%;
+}
+
+.soft-desc {
+    padding: 20px 40px;
+    width: 500px;
+    height: 100%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.soft-desc .soft-title {
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+.soft-other {
+    line-height: 25px;
+    font-size: 14px;
+}
+
+.soft-desc button {
+    float: right;
+    margin-bottom: 10px;
+    width: 120px;
+    height: 33px;
+    line-height: 33px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    background: #318CB8;
+}
+
+.showLike .likeMessage ul.soft-ul {
+    width: auto;
+}
+
+.showLike .likeMessage ul.soft-ul li {
+    float: left;
+    width: 200px;
+    margin: 20px 25px;
+    text-align: left;
+}
+
+.showLike .likeMessage ul.soft-ul li img {
+    width: 60px;
+    height: 60px;
+}
+
+.showLike .likeMessage ul.soft-ul li .softTitle {
+    float: right;
+    position: relative;
+    width: 130px;
+    height: 60px;
+}
+
+.showLike .likeMessage ul.soft-ul li dl {
+    margin-top: 10px;
+}
+
+.showLike .likeMessage ul.soft-ul li .softTitle dl {
+    margin-top: 0;
+    height: 60px;
+}
+
+.showLike .likeMessage ul.soft-ul li .softTitle dl dt {
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    height: 35px;
+    overflow: hidden;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--header start-->
+{dede:include filename="head.htm"/}
+<!--header start-->
+
+<!--header end--><!--header end-->
+<!--content start-->
+<body>
+
+
+<div class="content wrapper clearfix">
+    <div class="searchIndex clearfix">
+        <div class="search-top">
+            <span><a href="/gylxt/index.jhtml" target="_blank">企业专区</a>&nbsp;&gt;&nbsp;<a
+                    href="/gylxtBpbj/index.jhtml">名企展示</a></span>
+        </div>
+
+    </div>
+    <div class="showProduct clearfix">
+        <ul>
+            {dede:list pagesize='12'}
+
+            <li>
+
+                <a href="[field:shorttitle/]" target="_blank"><img src="[field:litpic/]" alt=""></a>
+                <div class="item-cname">
+                    <input id="searchOne" value=" " hidden="hidden" type="text">
+                    <input id="searchtwo" value=" " hidden="hidden" type="text">
+                    <input id="searchthree" value=" " hidden="hidden" type="text">
+                    <input id="searchFour" value=" " hidden="hidden" type="text">
+                    <dl>
+                        <dt class="aName">
+                            <a href="[field:shorttitle/]" target="_blank" title="[field:title/]">[field:title/]</a>
+                        </dt>
+                        <dd>地区：地区</dd>
+                    </dl>
+                </div>
+            </li>
+            {/dede:list}
+
+            <!--<li>-->
+            <!--<a href="[field:arcurl/]" class="pic"><img src="[field:litpic/]" alt="[field:title function='html2text(@me)'/]"/></a>-->
+            <!--<a href="[field:arcurl/]" class="title">[field:title/]</a>-->
+            <!--<span class="date"><small>最后更新：</small>[field:pubdate function="GetDateMK(@me)"/]</span>-->
+            <!--</li>-->
+
+        </ul>
+    </div>
+    <div class="page clearfix">
+        <div>
+
+        {dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}
+
+        </div>
+    </div> <!--分页显示-->
+</div>
+
+</body>
+
+<!--footer start-->
+
+{dede:include filename="footer.htm"/}
+<!--footer end--></html>

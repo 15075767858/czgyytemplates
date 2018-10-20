@@ -1,0 +1,28 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--header start-->
+{dede:include filename="head.htm"/}
+<!--header start-->
+
+<!--header end--><!--header end-->
+<!--content start-->
+<body>
+筛选
+{dede:php}
+AddFilter(19,1,'fenlei,fenlei1,infotype');
+echo "---";
+{/dede:php}
+啊
+{dede:list }
+<li>[field:title/]</li>
+{/dede:list}
+
+</body>
+
+<!--footer start-->
+
+{dede:include filename="footer.htm"/}
+<!--footer end--></html>

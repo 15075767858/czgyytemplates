@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+{dede:include filename="head.htm"/}
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/index_supply_commservice.css">
+<body>
+<div id="myCarousel" class="carousel slide">
+    <!-- 轮播（Carousel）指标 -->
+
+    <ol class="carousel-indicators">
+        {dede:arclist typeid='34' orderby='pubdate'}
+        <li data-target="#myCarousel" data-slide-to="[field:global name='autoindex' runphp='yes']
+            @me=@me-1;
+            [/field:global]" class="active"></li>
+        {/dede:arclist}
+    </ol>
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+
+        <div class="carousel-inner">
+            {dede:arclist typeid='34' orderby='pubdate'}
+            <div class='item [field:global name=autoindex runphp="yes"](@me==1)? @me="active":@me="";[/field:global]'>
+                <img src="[field:picname/]" alt="slide">
+            </div>
+            {/dede:arclist}
+        </div>
+    </div>
+
+    <!-- 轮播（Carousel）导航 -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<div class="main">
+    <div class="block-two">
+
+        <div class="block-head">
+            <div class="warp">
+            <span class="">
+            <!--<img src="images/block1.png">-->
+            <a href="member/archives_add.php?channelid=17" target="_blank" class="fb">发布能力</a>
+
+            </span>
+                <span class="loader line-scale ">
+                    <span class="right"> &gt; </span>
+                    <span class="right"> &gt; </span>
+                    <span class="right"> &gt; </span>
+                    <span class="right"> &gt; </span>
+                    <span class="right"> &gt; </span>
+                    <span class="right"> &gt; </span>
+                    <span class="right"> &gt; </span>
+                    <span class="right"> &gt; </span>
+                </span>
+                <span class="core">
+            <!--<img src="images/block2.png">-->
+            <span class="block-title">核心功能</span>
+            </span>
+                <span class="loader1 line-scale1">
+                    <span class="left"> &lt; </span>
+                    <span class="left"> &lt; </span>
+                    <span class="left"> &lt; </span>
+                    <span class="left"> &lt; </span>
+                    <span class="left"> &lt; </span>
+                                        <span class="left"> &lt; </span>
+                    <span class="left"> &lt; </span>
+                    <span class="left"> &lt; </span>
+                </span>
+                <span class="">
+            <!--<img src="images/block3.png">-->
+            <a href="member/archives_add.php?channelid=18" target="_blank" class="fb">发布需求</a>
+            </span>
+
+            </div>
+        </div>
+        <div class="warp">
+            <span class="orange-line"></span>
+        </div>
+        <div class="block-body">
+            <div class="pb15">
+                <div class="business-nav">
+                    <ul class="clearfix wrapper">
+                        <li class="pb pb1 animation">
+                            <a href="http://www.casicloud.com/search?q=%E5%8D%8F%E5%90%8C%E5%88%B6%E9%80%A0"
+                               target="_blank">
+                                <div class="p1">
+                                    <div class="pImg"><span class="line1"></span></div>
+                                    <p>协同制造</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="pb pb2 animation current">
+                            <a href="http://www.casicloud.com/search?q=%E4%BE%9B%E5%BA%94%E9%93%BE%E5%8D%8F%E5%90%8C"
+                               target="_blank">
+                                <div class="p2">
+                                    <div class="pImg"><span class="line1"></span></div>
+                                    <p>供应链协同</p>
+                                </div>
+                            </a>
+                        </li>
+                        {dede:type typeid='91'}
+                        <li class="pb pb3 animation">
+                            <a href="[field:typelink /]" target="_blank">
+                                <!--<a href="/yzyjyzx/index.jhtml" target="_blank">-->
+                                <div class="p3">
+                                    <div class="ph">
+                                        <div class="pImg"><span class="line1"></span></div>
+                                        <p>云资源交易中心</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        {/dede:type}
+                        <li class="pb pb4 animation">
+                            <a href="http://xzsp.cangzhou.gov.cn/" target="_blank">
+                                <div class="p4">
+                                    <div class="pImg"><span class="line1"></span></div>
+                                    <p>公共服务</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="pb pb5 animation">
+                            <a href="https://rjc.casicloud.com/index.htm" target="_blank">
+                                <div class="p5">
+                                    <div class="pImg"><span class="line1"></span></div>
+                                    <p>软件应用</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="business-box wrapper">
+                    <div class="business-bar">
+                        <div class="businessselect"></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div class="businessselect"></div>
+                    </div>
+                    <div class="tabpage">
+                        <div class="down">
+                            <!--<img style="position: absolute;left: 85px;"-->
+                            <!--src="/czgyy/templets/czgyy/images/index/down.png">-->
+                        </div>
+                        <div class="sideNav clearfix">
+                            <ul class="thul">
+                                <li class="current">
+                                    <div class="line">
+                                        <i class="icon-ability"></i>
+                                        <p>能力池展示</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="line">
+                                        <i class="icon-demand"></i>
+                                        <p>需求池展示</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="line">
+                                        <i class="icon-company"></i>
+                                        <p>企业制造能力展示</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sideCon">
+                            <div class="tabpanel">
+                                <div class="menuLink">
+                                    <!--<a href="javascript:void(0)" target="_blank" class="icon-light">研发设计</a>-->
+                                </div>
+                                <ul class="imgList">
+                                    {dede:arclist typeid='84' row='8' }
+                                    <li>
+                                        <div class="imgWrap">
+                                            <a href="[field:arcurl /]" target="_blank"><img src="[field:litpic /]"
+                                                                                            alt="[field:title /]"></a>
+                                        </div>
+                                        <div class="imgTitle">
+                                            <a href="[field:arcurl /]" targfet="_blank" title="[field:title /]">[field:title
+                                                /]</a>
+                                        </div>
+                                    </li>
+                                    {/dede:arclist}
+                                </ul>
+                            </div>
+                            <div class="tabpanel" style="display:none;">
+                                <div class="menuLink">
+                                    <!--<a href="javascript:void(0)" class="icon-light" target="_blank">研发设计</a>-->
+                                </div>
+                                <ul class="imgList">
+                                    {dede:arclist typeid='85' row='8' }
+                                    <li>
+                                        <div class="imgWrap">
+                                            <a href="[field:arcurl /]" target="_blank"><img src="[field:litpic /]"
+                                                                                            alt="[field:title /]"></a>
+                                        </div>
+                                        <div class="imgTitle">
+                                            <a href="[field:arcurl /]" targfet="_blank" title="[field:title /]">[field:title
+                                                /]</a>
+                                        </div>
+                                    </li>
+                                    {/dede:arclist}
+
+                                </ul>
+                            </div>
+                            <div class="tabpanel" style="display:none;">
+                                <div class="menuLink">
+                                    <!--<a href="javascript:void(0)" target="_blank" class="icon-bed" >机床工具</a>-->
+                                </div>
+                                <ul class="imgList">
+                                    {dede:arclist typeid='86' row='8' }
+                                    <li>
+                                        <div class="imgWrap">
+                                            <a href="[field:arcurl /]" target="_blank"><img src="[field:litpic /]"
+                                                                                            alt="[field:title /]"></a>
+                                        </div>
+                                        <div class="imgTitle">
+                                            <a href="[field:arcurl /]" targfet="_blank" title="[field:title /]">[field:title
+                                                /]</a>
+                                        </div>
+                                    </li>
+                                    {/dede:arclist}
+                                    <!--<li>-->
+                                    <!--<div class="imgWrap">-->
+                                    <!--<a href="/html/xtzzQyzznlzs/20180301/3012.html" target="_blank"><img src="/r/cms/www/default/resources/images/picLoading.jpg" class="lazyLoadPics" data-original="/u/cms/www/201803/07151620h3lz.png" alt="内蒙古雅布赖化工有限公司"></a>-->
+                                    <!--</div>-->
+                                    <!--<div class="imgTitle">-->
+                                    <!--<a href="/html/xtzzQyzznlzs/20180301/3012.html" target="_blank" title="内蒙古雅布赖化工有限公司">内蒙古雅布赖化工有..</a>-->
+                                    <!--</div>-->
+                                    <!--</li>-->
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabpage active">
+                        <div class="down">
+                            <!--<img style="position: absolute;left:305px;"-->
+                            <!--src="/czgyy/templets/czgyy/images/index/down.png">-->
+                        </div>
+                        <div class="sideNav">
+                            <ul>
+                                <li class="current">
+                                    <div class="line">
+                                        <i class="icon-bpbj"></i>
+                                        <p>备品备件</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="line">
+                                        <i class="icon-bpbjqg"></i>
+                                        <p>备品备件求购</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="line">
+                                        <i class="icon-zxzy"></i>
+                                        <p>众修资源</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sideCon">
+                            <div class="tabpanel">
+                                <div class="menuLink" style="display: none;">
+                                    <a href="javascript:void(0)" class="icon-light" target="_blank">机械设备</a>
+                                    <a href="javascript:void(0)" class="icon-setting" target="_blank">设备配件</a>
+                                    <a href="javascript:void(0)" class="icon-heart" target="_blank">阀门/管件</a>
+                                    <a href="javascript:void(0)" class="icon-wj" target="_blank">五金</a>
+                                    <a href="javascript:void(0)" class="icon-dq" target="_blank">电器/仪表</a>
+                                    <a href="javascript:void(0)" class="icon-setting" target="_blank">轻化类</a>
+                                    <a href="javascript:void(0)" class="icon-cl" target="_blank">材料</a>
+                                    <a href="javascript:void(0)" class="icon-other" target="_blank">其他</a>
+                                </div>
+                                <!--备品备件-->
+                                <ul class="imgList">
+                                    {dede:arclist typeid='87' row='8' channelid='6' addfields='abroudurl'}
+                                    <li>
+                                        <div class="imgWrap">
+                                            <a href="[field:abroudurl /]" target="_blank"><img src="[field:litpic /]"
+                                                                                               alt="[field:title /]"></a>
+                                        </div>
+                                        <div class="imgTitle">
+                                            <a href="[field:abroudurl /]" targfet="_blank" title="[field:title /]">[field:title
+                                                /]</a>
+                                        </div>
+                                    </li>
+                                    {/dede:arclist}
+
+                                    <!--<li>-->
+                                    <!--<div class="imgWrap">-->
+                                    <!--<a href="/html/gylxtBpbj/20180427/3067.html" target="_blank"><img src="/r/cms/www/default/resources/images/picLoading.jpg" class="lazyLoadPics" data-original="/u/cms/www/201804/27134818ohyf.png" alt="各种阀门类备件"></a>-->
+                                    <!--</div>-->
+                                    <!--<div class="imgTitle">-->
+                                    <!--<a href="/html/gylxtBpbj/20180427/3067.html" targfet="_blank" title="各种阀门类备件">各种阀门类备件</a>-->
+                                    <!--</div>-->
+                                    <!--</li>-->
+
+                                </ul>
+                            </div>
+                            <div class="tabpanel" style="display:none;">
+                                <div class="menuLink" style="display: none;">
+                                    <a href="javascript:void(0)" target="_blank" class="icon-light">机械设备</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-setting">设备配件</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-heart">阀门/管件</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-wj">五金</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-dq">电器/仪表</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-setting">轻化类</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-cl">材料</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-other">其他</a>
+                                </div>
+                                <div class="imgList">
+                                    <div class="tabPane">
+                                        <div class="tableHead">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th class="pTime" style="width: 10%">发布时间</th>
+                                                    <th class="aName" style="width: 20%">设备名称</th>
+                                                    <th class="area" style="width: 10%">种类</th>
+                                                    <th class="kind" style="width: 10%">数量</th>
+                                                    <th class="bCompany" style="width: 20%">需求方</th>
+                                                    <th class="price" style="width: 15%">所在地</th>
+                                                    <th class="thstyle" style="width: 15%"></th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <!--备品备件求购-->
+                                        <div class="tableBody">
+                                            <table>
+                                                {dede:arclist typeid='88' row='8' channelid='6' addfields='abroudurl'}
+                                                <li>
+                                                    <div class="imgWrap">
+                                                        <a href="[field:abroudurl /]" target="_blank"><img
+                                                                src="[field:litpic /]" alt="[field:title /]"></a>
+                                                    </div>
+                                                    <div class="imgTitle">
+                                                        <a href="[field:abroudurl /]" targfet="_blank"
+                                                           title="[field:title /]">[field:title /]</a>
+                                                    </div>
+                                                </li>
+                                                {/dede:arclist}
+                                                <!--<tr>-->
+                                                <!--<td class="pTime" style="width: 10%">2018-04-28</td>-->
+                                                <!--<td class="aName" style="width: 20%" title="求购定制编织袋">求购定制编织袋</td>-->
+                                                <!--<td class="area" style="width: 10%">包装材料</td>-->
+                                                <!--<td class="kind" style="width: 10%">500000</td>-->
+                                                <!--<td class="bCompany" style="width: 20%" title="内蒙古雅布赖盐化集团有限公司">内蒙古雅布赖盐化集...</td>-->
+                                                <!--<td class="price" style="width: 15%" >阿拉善盟 </td>-->
+                                                <!--<td class="last" style="width: 15%"><a href="/html/gylxtBpbjqg/20180428/3076.html" target="_blank">点击详情</a></td>-->
+                                                <!--</tr>-->
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabpanel" style="display:none;">
+                                <div class="menuLink" style="display: none;">
+                                    <a href="javascript:void(0)" target="_blank" class="icon-light">机械设备</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-office">办公设备</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-jt">交通设备</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-heart">专业设备</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-other">其他</a>
+                                </div>
+                                <!--众修资源-->
+                                <ul class="imgList">
+                                    {dede:arclist typeid='89' row='8' channelid='6' addfields='abroudurl'}
+                                    <li>
+                                        <div class="imgWrap">
+                                            <a href="[field:abroudurl /]" target="_blank"><img src="[field:litpic /]"
+                                                                                               alt="[field:title /]"></a>
+                                        </div>
+                                        <div class="imgTitle">
+                                            <a href="[field:abroudurl /]" targfet="_blank" title="[field:title /]">[field:title
+                                                /]</a>
+                                        </div>
+                                    </li>
+                                    {/dede:arclist}
+                                    <!--<li>-->
+                                    <!--<div class="imgWrap">-->
+                                    <!--<a href="/Repair_manager_preview.jspx?id=1c7deb4810f64772ac050eeb1b33f3fa" target="_blank"><img src="/r/cms/www/default/resources/images/picLoading.jpg" class="lazyLoadPics" data-original="/u/cms/www/201708/02164913403z.png" alt="自动化设备和电路板的维修"></a>-->
+                                    <!--&lt;!&ndash;<a href="/html/gylxtZxzy/20170802/2127.html" target="_blank"><img src="/r/cms/www/default/resources/images/picLoading.jpg" class="lazyLoadPics" data-original="/u/cms/www/201708/02164913403z.png" alt="自动化设备和电路板的维修"></a>&ndash;&gt;-->
+                                    <!--</div>-->
+                                    <!--<div class="imgTitle">-->
+                                    <!--&lt;!&ndash;<a href="/html/gylxtZxzy/20170802/2127.html" target="_blank" title="自动化设备和电路板的维修">自动化设备和电路板..</a>&ndash;&gt;-->
+                                    <!--<a href="/Repair_manager_preview.jspx?id=1c7deb4810f64772ac050eeb1b33f3fa" target="_blank" title="自动化设备和电路板的维修">自动化设备和电路板..</a>-->
+                                    <!--</div>-->
+                                    <!--</li>-->
+
+                                </ul>
+                            </div>
+                            <div class="tabpanel" style="display:none;">
+                                <div class="menuLink">
+                                    <a href="javascript:void(0)" target="_blank" class="icon-light">机械设备</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-office">办公设备</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-jt">交通设备</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-heart">专业设备</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-other">其他</a>
+                                </div>
+                                <div class="imgList">
+                                    <div class="tabPane">
+                                        <div class="tableHead">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th class="pTime" style="width: 10%">发布时间</th>
+                                                    <th class="aName" style="width: 20%">设备名称</th>
+                                                    <th class="area" style="width: 10%">种类</th>
+                                                    <th class="bCompany" style="width: 30%">需求方</th>
+                                                    <th class="price" style="width: 10%">所在地</th>
+                                                    <th class="thstyle" style="width: 20%"></th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <!--众修需求-->
+                                        <div class="tableBody">
+                                            <!--<table>-->
+                                            <!--<tr>-->
+                                            <!--<td class="pTime" style="width: 10%">2017-08-01</td>-->
+                                            <!--<td class="aName" style="width: 20%" title="空调维修服务">空调维修服务</td>-->
+                                            <!--<td class="area" style="width: 10%">办公设备</td>-->
+                                            <!--<td class="bCompany" style="width: 30%" title="武汉光谷航天三江激光产业技术研究院有限公司">武汉光谷航天三江激...</td>-->
+                                            <!--<td class="price" style="width: 10%">赤峰市</td>-->
+                                            <!--&lt;!&ndash;<td class="last" style="width: 20%;"><a target="_blank" href="/html/gylxtZxxq/20170802/2129.html" style="margin-left: 45px">点击详情</a></td>&ndash;&gt;-->
+                                            <!--<td class="last" style="width: 20%;"><a target="_blank" href="/repairDemand.jspx?id=1281124957&flag=1" style="margin-left: 45px">点击详情</a></td>-->
+                                            <!--</tr>-->
+                                            <!--</table>-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabpage">
+                        <div class="down">
+                            <!--<img style="position: absolute;left:525px;"-->
+                            <!--src="/czgyy/templets/czgyy/images/index/down.png">-->
+                        </div>
+                        <div class="sideNav">
+                            <ul class="thul">
+                                <li>
+                                    <div class="line">
+                                        <i class="icon-policy"></i>
+                                        <p>云计算政策</p>
+                                    </div>
+                                </li>
+                                <li class="current">
+                                    <div class="line">
+                                        <i class="icon-resource"></i>
+                                        <p>云资源查看</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="line">
+                                        <i class="icon-yxq"></i>
+                                        <p>云需求</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sideCon">
+                            <div class="tabpanel" style="display: none;">
+                                <div class="menuLink">
+
+                                    <a href="/czgyy/plus/list.php?tid=92&jb=国家级" target="_blank"
+                                       class="icon-nation">国家级</a>
+                                    <a href="/czgyy/plus/list.php?tid=92&jb=省区级" class="icon-province">省区级</a>
+                                    <a href="/czgyy/plus/list.php?tid=92&jb=盟市级" target="_blank"
+                                       class="icon-city">盟市级</a>
+                                </div>
+                                <ul class="policy clearfix">
+                                    {dede:arclist typeid='92' row='6' }
+                                    <li>
+                                        【<span class="level">省区级</span>】
+                                        <span class="p-title"><a title="[field:title /]" href="[field:arcurl/]"
+                                                                 target="_blank">[field:fulltitle /]</a></span>
+                                        <span class="level">[field:stime /]</span>
+                                    </li>
+                                    {/dede:arclist}
+
+                                    <!---->
+                                </ul>
+                            </div>
+                            <div class="tabpanel" style="display:block;">
+                                <div class="menuLink">
+                                    <a href="javascript:void(0)" class="icon-city1" target="_blank">沧州</a>
+                                    <a href="javascript:void(0)" class="icon-city2" target="_blank">其他</a>
+                                    <!--<a href="javascript:void(0)" class="icon-city3"  target="_blank">乌海</a>-->
+                                </div>
+                                <ul class="imgList">
+                                    <!--<li>-->
+                                    <!--<div class="imgWrap">-->
+                                    <!--<a href="/html/yzyjyzxYzyck/20180702/3276.html" target="_blank"><img src="/r/cms/www/default/resources/images/picLoading.jpg" class="lazyLoadPics" data-original="/u/cms/www/201807/021437001q3f.png" alt="云监控服务（CES）、统一身份认证服务（IAM）、云审计服务（CTS）"></a>-->
+                                    <!--</div>-->
+                                    <!--<div class="imgTitle">-->
+                                    <!--<a href="/html/yzyjyzxYzyck/20180702/3276.html" target="_blank" title="云监控服务（CES）、统一身份认证服务（IAM）、云审计服务（CTS）">云监控服务（CES）..</a>-->
+                                    <!--</div>-->
+                                    <!--</li>-->
+                                    {dede:arclist typeid='93' row='8' channelid='6' addfields='abroudurl'}
+                                    <li>
+                                        <div class="imgWrap">
+                                            <a href="[field:abroudurl /]" target="_blank"><img src="[field:litpic /]"
+                                                                                               alt="[field:title /]"></a>
+                                        </div>
+                                        <div class="imgTitle">
+                                            <a href="[field:abroudurl /]" targfet="_blank" title="[field:title /]">[field:title
+                                                /]</a>
+                                        </div>
+                                    </li>
+                                    {/dede:arclist}
+
+                                </ul>
+                            </div>
+                            <div class="tabpanel" style="display:none;">
+                                <div class="menuLink">
+                                    <a href="javascript:void(0)" target="_blank" class="icon-light">模块化服务器</a>
+                                    <a href="javascript:void(0)" target="_blank" class="icon-setting">标准化服务器</a>
+                                </div>
+                                <ul class="imgList">
+                                    {dede:arclist typeid='94' row='8' channelid='6' addfields='abroudurl'}
+                                    <li>
+                                        <div class="imgWrap">
+                                            <a href="[field:abroudurl /]" target="_blank"><img src="[field:litpic /]"
+                                                                                               alt="[field:title /]"></a>
+                                        </div>
+                                        <div class="imgTitle">
+                                            <a href="[field:abroudurl /]" targfet="_blank" title="[field:title /]">[field:title
+                                                /]</a>
+                                        </div>
+                                    </li>
+                                    {/dede:arclist}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabpage">
+                        <div class="down">
+                            <!--<img style="position: absolute;left:745px;"-->
+                            <!--src="/czgyy/templets/czgyy/images/index/down.png">-->
+                        </div>
+                        <div class="sideNav">
+                            <ul class="">
+                                <li class="current" onclick="startScroll()">
+                                    <div class="line">
+                                        <i class="icon-bid"></i>
+                                        <p>项目招投标</p>
+                                    </div>
+                                </li>
+                                <li style="display: none">
+                                    <div class="line">
+                                        <i class="icon-set"></i>
+                                        <p>经济运行管理</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sideCon">
+                            <div class="tabpanel" style="display: block;">
+                                <div class="menuLink">
+                                    <!--<a href="/ggfwXmztb/index.jhtml" class="icon-light">呼和浩特</a>-->
+                                    <!--<a href="/ggfwXmztb/index.jhtml" class="icon-setting"> 包头</a>-->
+                                    <!--<a href="/ggfwXmztb/index.jhtml" class="icon-watch">赤峰</a>-->
+                                    <!--<a href="/ggfwXmztb/index.jhtml" class="icon-heart"> 呼伦贝尔</a>-->
+                                    <!--<a href="/ggfwXmztb/index.jhtml" class="icon-internet">通辽</a>-->
+                                    <!--<a href="/ggfwXmztb/index.jhtml" class="icon-other">其他</a>-->
+                                </div>
+                                <div class="css imgList">
+                                    <div class="column-two">
+                                        <div class="column-bd">
+                                            <div class="bid callBid">
+                                                <h5>招标公告</h5>
+                                                <div class="bidList" id="bid1">
+                                                    <ul>
+                                                        {dede:artlist typeid='122' row='2' }
+                                                        <li>【[field:stime/]】<a
+                                                                href="[field:arcurl/]"
+                                                                target="_blank" title="[field:title/]">
+                                                            [field:title/]</a></li>
+                                                        {/dede:artlist}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="bid winBid">
+                                                <h5>中标公告</h5>
+                                                <div class="bidList" id="bid2">
+                                                    <ul>
+                                                        {dede:artlist typeid='123' row='2' }
+                                                        <li>【[field:stime/]】<a
+                                                                href="[field:arcurl/]"
+                                                                target="_blank" title="[field:title/]">
+                                                            [field:title/]</a></li>
+                                                        {/dede:artlist}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="bid bidForeshow">
+                                                <h5>招标预告</h5>
+                                                <div class="bidList" id="bid3">
+                                                    <ul>
+                                                        {dede:artlist typeid='124' row='2' }
+                                                        <li>【[field:stime/]】<a
+                                                                href="[field:arcurl/]"
+                                                                target="_blank" title="[field:title/]">
+                                                            [field:title/]</a></li>
+                                                        {/dede:artlist}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="bidFooter" style="display: none;">
+                                                线上招标系统（视频招标） <a
+                                                    href="http://222.74.31.171:8088/meeting/app/meetinglist/todayDataList.action?site=box&amp;menuname=24000_24001_24002"
+                                                    target="_blank">
+                                                <button>点击进入</button>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabpanel" style="display:none;">
+                                <div class="left">
+                                    <ul>
+                                        <li>
+                                            <img src="/r/cms/www/default/resources/images/coomonService/sys1.jpg"
+                                                 alt="">
+                                            <div class="sysDiv">
+                                                <span class="ch">高耗能销售统计</span><br>
+                                                <span class="en">HIGH ENERGY<br>SALES STATISTICS</span><br>
+                                                <a href="/member/Sold_relese.jspx?flag=front" target="_blank"
+                                                   class="more">数据录入&gt;</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="/r/cms/www/default/resources/images/coomonService/sys2.jpg"
+                                                 alt="">
+                                            <div class="sysDiv">
+                                                <span class="ch">政策申请</span><br>
+                                                <span class="en">POLICY APPLICATION</span><br>
+                                                <a href="/ggfwHbzc/index.jhtml" target="_blank" class="more">申请&gt;</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="/r/cms/www/default/resources/images/coomonService/sys3.jpg"
+                                                 alt="">
+                                            <div class="sysDiv">
+                                                <span class="ch">个性化数据分析</span><br>
+                                                <span class="en">DATA ANALYSIS</span><br>
+                                                <a href="/member/index.jspx" target="_top" class="more">登录&gt;</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="right" style="display:none;">
+                                    <div class="energyBd">
+                                        <div class="cover">
+                                            <div class="tip"></div>
+                                            <h3>能源管控</h3>
+                                            <span class="e">Energy management <br> and control</span>
+                                        </div>
+                                    </div>
+                                    <div class="loginBtn">
+                                        <button>登&nbsp;录</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabpage">
+                        <div class="down">
+                            <!--<img style="position: absolute;left:965px;"-->
+                            <!--src="/czgyy/templets/czgyy/images/index/down.png">-->
+                        </div>
+                        <div class="sideNav">
+                            <ul class="thul">
+                                <li class="current">
+                                    <div class="line">
+                                        <i class="icon-search"></i>
+                                        <p>软件检索</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="line">
+                                        <i class="icon-free"></i>
+                                        <p>免费软件</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="line">
+                                        <i class="icon-pay"></i>
+                                        <p>付费软件</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sideCon">
+                            <div class="tabpanel">
+                                <div class="menuLink">
+                                    <!--<a href="/rjyyRjjsym/index-undefined-zzgcs-undefined-undefined-undefined-.jhtml" target="_blank"  class="icon-gcs">制造工程师</a>-->
+                                    {dede:php}
+                                    AddFilter(20,1,'jb');
+                                    {/dede:php}
+                                </div>
+                                <ul class="imgList">
+
+                                    {dede:arclist typeid='96' row='8' }
+                                    <li>
+                                        <div class="imgWrap">
+                                            <a href="[field:arcurl /]" target="_blank"><img
+                                                    src="[field:litpic/]"
+                                                    class="lazyLoadPics"
+                                                    data-original="[field:litpic/]"
+                                                    alt="[field:title/]"></a>
+                                        </div>
+                                        <div class="imgTitle">
+                                            <a href="[field:arcurl /]" target="_blank"
+                                               title="[field:title/]">[field:title/]</a>
+                                        </div>
+                                    </li>
+                                    {/dede:arclist}
+
+                                </ul>
+                            </div>
+                            <div class="tabpanel" style="display:none;">
+                                <div class="menuLink">
+                                    <!--<a href="/rjyyRjjsym/index-mf-zzgcs-undefined-undefined-undefined-.jhtml" target="_blank"  class="icon-gcs">制造工程师</a>-->
+                                </div>
+                                <ul class="imgList">
+                                    {dede:arclist typeid='98' row='8' }
+                                    <li>
+                                        <div class="imgWrap">
+                                            <a href="[field:arcurl /]" target="_blank"><img
+                                                    src="[field:litpic/]"
+                                                    class="lazyLoadPics"
+                                                    data-original="[field:litpic/]"
+                                                    alt="[field:title/]"></a>
+                                        </div>
+                                        <div class="imgTitle">
+                                            <a href="[field:arcurl /]" target="_blank"
+                                               title="[field:title/]">[field:title/]</a>
+                                        </div>
+                                    </li>
+                                    {/dede:arclist}
+
+                                </ul>
+                            </div>
+                            <div class="tabpanel" style="display:none;">
+                                <div class="menuLink">
+                                    <!--<a href="/rjyyRjjsym/index-ff-zzgcs-undefined-undefined-undefined-.jhtml" target="_blank"  class="icon-gcs">制造工程师</a>-->
+                                </div>
+                                <ul class="imgList">
+                                    {dede:arclist typeid='99' row='8' }
+                                    <li>
+                                        <div class="imgWrap">
+                                            <a href="[field:arcurl /]" target="_blank"><img
+                                                    src="[field:litpic/]"
+                                                    class="lazyLoadPics"
+                                                    data-original="[field:litpic/]"
+                                                    alt="[field:title/]"></a>
+                                        </div>
+                                        <div class="imgTitle">
+                                            <a href="[field:arcurl /]" target="_blank"
+                                               title="[field:title/]">[field:title/]</a>
+                                        </div>
+                                    </li>
+                                    {/dede:arclist}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-three">
+        {dede:type typeid='112'}
+        <a href="[field:typeurl /]"><img class="enlarge"
+                                         src="http://www.nmggyy.com/r/cms/www/default/resources/images/index/zhongtiewuliu.jpg"></a>
+        {/dede:type}
+        <span class="line"></span>
+    </div>
+    <div class="interaction ">
+        <div class="ia-head">
+            <h3>&nbsp;互动专区&nbsp;</h3>
+        </div>
+        <div class="ia-body warp clearfix">
+            <div class="ia-item ">
+                <div class="img fl">
+                    <img class="enlarge" src="{dede:global.cfg_templets_skin/}/images/index/issue.png">
+                </div>
+                <div class="artcles fl">
+                    {dede:type typeid='100'}
+                    <h5>[field:typename/]</h5>
+                    {/dede:type}
+                    <ul>
+                        {dede:arclist typeid='100' row='3' }
+                        <li><a href="[field:arcurl/]" target="_blank" title="">[field:title /]</a></li>
+                        {/dede:arclist}
+                    </ul>
+
+                </div>
+            </div>
+            <div class="ia-item ">
+                <div class="img fl">
+                    <img class="enlarge" src="{dede:global.cfg_templets_skin/}/images/index/headstorm.png">
+                </div>
+                <div class="artcles fl">
+                    {dede:type typeid='101'}
+                    <h5>[field:typename/]</h5>
+                    {/dede:type}
+                    <ul>
+                        {dede:arclist typeid='101' row='3' }
+                        <li><a href="[field:arcurl/]" target="_blank" title="">[field:title /]</a></li>
+                        {/dede:arclist}
+                    </ul>
+                </div>
+            </div>
+            <div class="ia-item ">
+                <div class="img fl">
+                    <img class="enlarge" src="{dede:global.cfg_templets_skin/}/images/index/opinion.png">
+                </div>
+                <div class="artcles fl">
+                    {dede:type typeid='102'}
+                    <h5>[field:typename/]</h5>
+                    {/dede:type}
+                    <ul>
+                        {dede:arclist typeid='102' row='3' }
+                        <li><a href="[field:arcurl/]" target="_blank" title="">[field:title /]</a></li>
+                        {/dede:arclist}
+                    </ul>
+                </div>
+            </div>
+            <div class="ia-item ">
+                <div class="img fl">
+                    <img class="enlarge" src="{dede:global.cfg_templets_skin/}/images/index/systemnotice.png">
+                </div>
+                <div class="artcles fl">
+                    {dede:type typeid='103'}
+                    <h5>[field:typename/]</h5>
+                    {/dede:type}
+                    <ul>
+                        {dede:arclist typeid='103' row='3' }
+                        <li><a href="[field:arcurl/]" target="_blank" title="">[field:title /]</a></li>
+                        {/dede:arclist}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{dede:include filename="footer.htm"/}
+
+</body>
+</html>

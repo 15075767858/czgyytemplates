@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--header start-->
+{dede:include filename="head.htm"/}
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/abilityPreview.css"/>
+<!--header start-->
+
+<!--header end--><!--header end-->
+<!--content start-->
+<body>
+
+<div class="content clearfix">
+    <!--<div class="search-top wrapper">-->
+        <!--<input id="abilityid" type="text" hidden="hidden" value="411">-->
+        <!--<div id="icloudmb" style="display: none;">-->
+            <!--<a href="/xtzz/index.jhtml" target="_blank">协同制造</a>-->
+            <!--<a href="/xtzzNlczs/index.jhtml" target="_blank">能力池</a>-->
+            <!--<a href="/xtzzNlczs/index-880100-undefined-undefined-undefined-undefined-880000-.jhtml">-->
+                <!--产业融合&gt; 工业</a>-->
+            <!--<a class="current show-title" title="具备全国性的运营管理能力的云服务、大数据厂商。">具备全国性的运营管理能力的云服务、大数据厂商。</a>-->
+        <!--</div>-->
+
+        <!--<div id="cyrhmb">-->
+            <!--<a href="/xtzzNlczs/index-880100-undefined-undefined-undefined-undefined-880000-.jhtml">-->
+                <!--产业融合&gt; 工业</a>-->
+            <!--<a class="current show-title" title="具备全国性的运营管理能力的云服务、大数据厂商。">具备全国性的运营管理能力的云服务、大数据厂商。</a>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="ability">
+
+        <div class="showAbility wrapper clearfix">
+            <div class="showImg">
+                <div id="bigImg" class="bigImg">
+                    <img class="current" id="01" src="/u/cms/www/201809/25095445pr73.jpg">
+                </div>
+                <div class="left">
+                    <img src="/r/cms/www/default/resources/images/abilityPreview/left.png">
+                </div>
+                <div class="smallImg clearfix">
+                    <div id="smallImg" class="images">
+                        <img class="current" id="0" src="/u/cms/www/201809/25095445pr73.jpg">
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="/r/cms/www/default/resources/images/abilityPreview/right.png">
+                </div>
+            </div>
+            <div class="showMessage">
+                <div class="titleDiv">
+                    <p class="title"><a class="show-title" title="{dede:field.title /}">{dede:field.title /}</a></p>
+                </div>
+                <div class="descDiv">
+                    <span>市场价格：</span><span class="price">{dede:field.price/}</span><br>
+                    <span>优惠价格：</span><span class="price">{dede:field.trueprice/}</span><br>
+                    <div id="unit" style="display: none;"><span>计量单位：</span><span>参照服务</span></div><br>
+                    <div class="areaZone">
+                        <label>所在地区：</label>内蒙古自治区乌海市海勃湾区人民南路16号
+                    </div><br>
+                </div>
+                <button onclick="grandSubCheck()">我要对接</button>
+            </div>
+            <div class="showCompany">
+                <div class="company">
+                    <span class="title" style="color: #286090;cursor:pointer;z-index:999" onclick="cyrh()">乌海市浪潮信息科技有限公司</span>
+                    <br>
+                    <!--<span>企业电话：</span><span></span><br>-->
+                    <span>企业地址：</span>
+                    <span title="内蒙古自治区呼和浩特市新城区">
+                        内蒙古自治区呼和浩特市新城区
+                    </span>
+                    <br>
+                    <div class="navTop"></div>
+                    <div class="navTop2">
+                        <div style="color: #4d4a4b;font-size: 16px;font-weight: 600;">请&nbsp;&nbsp;<a class="btnLogin" style="width: 50px" href="/login.jspx?cyrh=1">登录</a>&nbsp;&nbsp;后查看联系信息</div>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="showKinds">
+        <div class="kingsTop wrapper">
+            <span class="current">能力详情</span>
+            <!--<span>能力评价</span>-->
+            <!--<span>能力评价&nbsp;<b>0</b></span>-->
+            <!--<span>咨询留言</span>-->
+        </div>
+        <div class="kindsMessage wrapper">
+            <div class="current wrapper">
+                <div class="info" id="contentTxtHere"><p style="text-indent:37px"><span style="font-size:19px;font-family:仿宋">乌海市浪潮信息科技有限公司是浪潮集团实施云计算、大数据战略成立的专业子公司，公司专注于云计算、大数据服务的整体解决方案和运营，成为具备全国性的运营管理能力的云服务、大数据厂商。</span></p><p><br></p></div>
+            </div>
+            <div class="wrapper">
+                <section class="comments">
+                    <!--<span class="pl">评论<span>已有<a class="count" href="/comment.jspx?contentId=3356">-->
+                    <!--0 </a>条</span>-->
+                    <!--</span>-->
+                    <form id="commentForm" action="/comment.jspx" method="post" novalidate="novalidate">
+                        <textarea name="text" placeholder="发表你此时的观点和想法 ……" class="comments-text" id="comments-text"></textarea>
+                        <div class="submit-content">
+                            <span>请输入验证码：</span>
+                            <input name="captcha" type="text" placeholder="验证码" id="captcha" class="plcode">
+                            <span id="showError" class="hide" style="color: red">验证码不能为空</span>
+                            <img id="commentCaptcha" src="/captcha.svl" onclick="this.src='/captcha.svl?d='+new Date()">
+                            <i>（输入图中的验证码，不区分大小写）</i>
+                            <input type="hidden" name="contentId" value="3356">
+                            <input type="hidden" name="sessionId" id="sessionId" value="A88D7D838F1DBCC20EBC6C47996245D4">
+                            <input type="submit" value="发表" class="submit-on">
+                        </div>
+                    </form>
+                    <script type="text/javascript">
+
+                        $("#captcha").keyup(function () {
+                            var val = $(this).val();
+                            if(val == ""){
+                                $("#showError").removeClass("hide");
+                            }else{
+                                $("#showError").addClass("hide");
+                            }
+                        });
+
+                        $(function() {
+                            $("#sessionId").val($.cookie("JSESSIONID"));
+                            Cms.comment(function(data) {
+                                if(data.status==0) {
+                                    alert("评论成功");
+                                    location.href=location.href;
+                                } else if(data.status==1) {
+                                    alert("验证码错误");
+                                    $("#commentCaptcha").click();
+                                } else if(data.status==2) {
+                                    alert("内容不存在");
+                                    $("#commentCaptcha").click();
+                                } else if(data.status==3) {
+                                    alert("评论关闭");
+                                    $("#commentCaptcha").click();
+                                } else if(data.status==4) {
+                                    alert("需要登录评论");
+                                    $("#commentCaptcha").click();
+                                }else if(data.status==5) {
+                                    alert("已经评论过，不能重复评论");
+                                    $("#commentCaptcha").click();
+                                } else if(data.status==100) {
+                                    alert("内容不存在");
+                                    $("#commentCaptcha").click();
+                                } else if(data.status==101) {
+                                    alert("评论不能为空");
+                                    $("#commentCaptcha").click();
+                                } else {
+                                    alert("评论失败");
+                                    $("#commentCaptcha").click();
+                                }
+                            });
+                        });
+                    </script>
+                </section>
+
+                <script src="/r/cms/jquery.js" type="text/javascript"></script>
+                <script src="/r/cms/front.js" type="text/javascript"></script>
+                <section class="comments" id="commentList"><div class="title-more">
+                    <h3><span>热门评论</span></h3>
+                    <a href="/comment.jspx?contentId=3356&amp;channelId=103">更多评论</a>
+                </div>
+                    <div class="closeReplay">
+                    </div>
+                </section>
+                <script type="text/javascript">
+                    $(function () {
+                        Cms.icloudCommentList("", "commentList", {"contentId": "3356","channelId":"103"});
+                    });
+                </script>
+            </div>
+            <div class="wrapper">
+                <section class="comments">
+                    <form id="consultForm" action="/consult.jspx" method="post" novalidate="novalidate">
+                        <textarea name="text" placeholder="发表你想咨询的问题 ……" class="comments-text"></textarea>
+                        <div class="submit-content">
+                            <span>请输入验证码：</span>
+                            <input name="captcha" type="text" placeholder="验证码" id="captcha1" class="plcode">
+                            <span id="showError1" class="hide" style="color: red">验证码不能为空</span>
+                            <img id="commentCaptcha1" src="/captcha.svl" onclick="this.src='/captcha.svl?d='+new Date()">
+                            <i>（输入图中的验证码，不区分大小写）</i>
+                            <input type="hidden" name="contentId" value="3356">
+                            <input type="submit" value="提交留言" class="submit-on">
+                        </div>
+                    </form>
+                    <script type="text/javascript">
+                        $("#captcha1").keyup(function () {
+                            var val = $(this).val();
+                            if(val == ""){
+                                $("#showError1").removeClass("hide");
+                            }else{
+                                $("#showError1").addClass("hide");
+                            }
+                        });
+
+                        $(function() {
+                            Cms.consult(function(data) {
+                                if(data.status==0) {
+                                    alert("留言成功");
+                                    location.href=location.href;
+                                } else if(data.status==1) {
+                                    alert("验证码错误");
+                                    $("#commentCaptcha1").click();
+                                } else if(data.status==2) {
+                                    alert("内容不存在");
+                                    $("#commentCaptcha1").click();
+                                } else if(data.status==3) {
+                                    alert("留言关闭");
+                                    $("#commentCaptcha1").click();
+                                } else if(data.status==4) {
+                                    alert("需要登录留言");
+                                    $("#commentCaptcha1").click();
+                                }else if(data.status==5) {
+                                    alert("已经留言过，不能重复留言");
+                                    $("#commentCaptcha1").click();
+                                } else if(data.status==100) {
+                                    alert("内容不存在");
+                                    $("#commentCaptcha1").click();
+                                } else if(data.status==101) {
+                                    alert("留言不能为空");
+                                    $("#commentCaptcha1").click();
+                                } else {
+                                    alert("留言失败");
+                                    $("#commentCaptcha1").click();
+                                }
+                            });
+                        });
+                    </script>
+                </section>
+
+                <script src="/r/cms/jquery.js" type="text/javascript"></script>
+                <script src="/r/cms/front.js" type="text/javascript"></script>
+                <section class="comments" id="consultList"><div class="title-more">
+                    <h3><span>咨询留言</span></h3>
+                    <a href="/consult.jspx?contentId=3356&amp;channelId=103">更多留言</a>
+                </div>
+                    <div class="closeReplay">
+                    </div>
+                </section>
+                <script type="text/javascript">
+                    $(function () {
+                        Cms.icloudConsultList("", "consultList", {"contentId": "3356","channelId":"103"});
+                    });
+                </script>            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+<!--footer start-->
+<script type="text/javascript" charset="utf-8" src="{dede:global.cfg_templets_skin/}/js/abilityPreview.js"></script>
+{dede:include filename="footer.htm"/}
+<!--footer end--></html>

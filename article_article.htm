@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--header start-->
+{dede:include filename="head.htm"/}
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/abilityPreview.css"/>
+
+<!--header end--><!--header end-->
+<!--content start-->
+<body>
+<div class="content wrapper clearfix">
+
+    <div class="notice">
+        <div class="noticeTitle">
+            <p class="titleName">{dede:field.title /}</p>
+            <div class="noticeSource">
+                <p class="sourceTitle">发布日期：<span style="color: black">{dede:field.pubdate function="MyDate('Y-m-d H:i:s',@me)"/}</span></p>
+            </div>
+        </div>
+        <div class="noticeInfo">
+            <p class="noticeDesc">
+            </p>
+                {dede:field.body /}
+        </div>
+        <table id="attachTable" border="0" style="margin-left: 0;">
+        </table>
+        <!--<a href="/member/cloudCenter_apply_add.jspx?id=21" target="_blank" style="margin-right: 10px"><button type="button">政策申请</button></a>-->
+    </div>
+
+</div>
+</body>
+
+<!--footer start-->
+
+{dede:include filename="footer.htm"/}
+<!--footer end--></html>

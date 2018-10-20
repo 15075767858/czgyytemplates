@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--header start-->
+{dede:include filename="head.htm"/}
+<!--header start-->
+
+<!--header end--><!--header end-->
+<!--content start-->
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/searching.css?v=1.00">
+<style>
+    .filter {
+        border: 1px solid #DBDBDB;
+        padding-bottom: 10px;
+    }
+
+    .filter .type {
+        line-height: 36px;
+        height: 36px;
+    }
+
+    .filter b {
+        width: 100px;
+        color: #89898F;
+    }
+
+    .filter .type > * {
+        margin: 0 20px;
+    }
+
+    .filter span {
+        color: red;
+    }
+
+    .page ul{
+        margin: auto;
+        margin-left: 350px;
+    }
+    .page li{
+        height: 50px;
+
+        float: left;
+    }
+    .page span{
+        line-height: 32px;
+    }
+</style>
+<body>
+<div class="content wrapper clearfix">
+    <div class="searchIndex">
+        <div class="search-top">
+            <span>
+                {dede:field name='position'/}
+            </span>
+        </div>
+        <div class="search-main">
+            <!--需要修改-->
+            <div class="filter wrapper">
+                <div class="type">
+                    {dede:php}
+                    AddFilter(22,1,'fffs');
+                    {/dede:php}
+                </div>
+                <div class="type">
+                    {dede:php}
+                    AddFilter(22,1,'rjlx');
+                    {/dede:php}
+                </div>
+
+            </div>
+            <div class="searchBox">
+                <ul class="clearfix">
+                    <li class=""><a href="list.php?tid={dede:field.typeid /}">综合</a></li>
+                    <!--<li class="current"><a onclick="abilitySearch('3','1')">发布时间&nbsp;&nbsp;↓</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="showPolicy clearfix wrapper">
+        <ul class=" clearfix">
+            <!--需要修改-->
+            {dede:list channelid='22' addfields='jb,fclx,fbsj' pagesize='5'}
+            <li>
+                <a href="[field:arcurl/]" target="_blank">
+                    <img src="[field:litpic/]" alt="软件图片">
+                </a>
+                <div class="item-cname" style="position: relative;">
+                    <dl>
+                        <dt style="margin-bottom: 30px;">
+                            <a href="[field:arcurl /]" target="_blank"><b title="[field:title /]">[field:title /]</b></a>
+                        </dt>
+                        <div style="float:right;color:#FF8000"></div>
+                        <dd style="line-height: 25px;color: #aaa; "><span style="margin-right: 30px;">类型:图文档</span><span>更新日期:[field:stime /]</span></dd>
+                        <dd style="line-height: 25px;color: #aaa; ">地区:<span title="内蒙古自治区包头市东河区">内蒙古自治区包头市东河区</span></dd>
+                        <div style="position: absolute;right: 0;top: 30px;">
+                            <a href="[field:arcurl /]" target="_blank"><button type="button">查看详情</button></a>
+
+                        </div>
+                    </dl>
+                </div>
+            </li>
+            {/dede:list}
+
+        </ul>
+    </div>
+    <div class="page clearfix">
+        <div><ul class="clearfix">{dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}</ul></div>
+    </div> <!--分页显示-->
+</div>
+</body>
+
+<!--footer start-->
+
+{dede:include filename="footer.htm"/}
+<!--footer end--></html>

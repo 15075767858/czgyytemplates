@@ -1,0 +1,316 @@
+<head>
+    <meta charset="UTF-8">
+    <title>{dede:global.cfg_webname/}</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/base.css">
+    <link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/index.css?v=1.007">
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myCarousel").carousel({interval: 3000});
+            $(".numTips li").click(function () {
+                var B = $(this).index();
+                $(this).siblings().removeClass("current");
+                $(this).addClass("current");
+                $(".img-info img").hide();
+                $(".img-info img").eq(B).fadeIn();
+                $(".newsIndex").html("0" + (B + 1) + "/");
+                $(".news-detail").hide();
+                $(".news-detail").eq(B).show();
+                $(".news-title dl").hide();
+                $(".news-title dl").eq(B).show()
+            });
+
+            $(".business-nav li").hover(function () {
+                var B = $(this).index();
+                $(this).siblings().removeClass("current");
+                $(this).addClass("current");
+                $(".business-box .tabpage").removeClass("active");
+                $(".business-bar div").removeClass("businessselect")
+                $(".business-bar div").eq(B).addClass("businessselect")
+                $(".business-box .tabpage").eq(B).addClass("active")
+            });
+
+
+            $(".sideNav li").click(function () {
+                var B = $(this).index();
+                $(this).siblings().removeClass("current");
+                $(this).addClass("current");
+                $(this).parents(".sideNav").next().find(".tabpanel").hide();
+                $(this).parents(".sideNav").next().find(".tabpanel").eq(B).fadeIn()
+            });
+            $.extend(jQuery.easing, {
+                easeOutStrong: function (C, D, E, F, B) {
+                    return -F * ((D = D / B - 1) * D * D * D - 1) + E
+                }
+            });
+            $(".slider").on("mouseenter", function () {
+                var E = [0];
+                var D = $(this).attr("pid");
+                for (var C = 0; C < 4; C++) {
+                    var B = C == D ? 280 : 0;
+                    if (C > 0) {
+                        E[C] = E[C - 1] + 205 + B
+                    }
+                    $(".slider").eq(C).stop().animate({"left": E[C]}, 1000, "easeOutStrong");
+                    $(".slider").find(".current").removeClass("current");
+                    $(this).find(".bgslide").addClass("current");
+                    $(".slider").find(".active").removeClass("active");
+                    $(this).find(".slideTitle").addClass("active")
+                }
+            });
+            var A = [0, 205, 410, 615];
+            $("#slider").on("mouseleave", function () {
+                for (var B = 0; B < 4; B++) {
+                    $(".slider").eq(B).stop().animate({"left": A[B]}, 1000, "easeOutStrong");
+                    $(this).find(".current").removeClass("current");
+                    $(this).find(".slider").eq("3").find(".bgslide").addClass("current")
+                }
+            })
+        });
+    </script>
+</head>
+<div class="header ">
+    <div class="top">
+        <div class="top-bar warp clearfix">
+            <div class="left-top fl">
+                您好，欢迎来到{dede:global.cfg_webname/}！
+            </div>
+            <div class="right-top fr ">
+                <div class="about fl">
+                    {dede:type typeid='111'}
+                    <a href="[field:typelink /]">关于工业云</a>
+                    {/dede:type}
+                </div>
+                <!--<div class="login fl">-->
+                <!--<a href="member/index_do.php?fmdo=user&dopost=regnew">[ 登 录 ]</a>-->
+                <!--</div>-->
+                <!--<div class="register fl">-->
+                <!--<a href="member/index.php">[ 注 册 ]</a>-->
+                <!--</div>-->
+
+                <!--<div class="register fl">-->
+                <!--<a href="member/index.php">中科物联</a>-->
+                <!--</div>-->
+                <!--<div class="register fl">-->
+                <!--<a href="member/index.php">[ 个 人 中 心 ]</a>-->
+                <!--</div>-->
+                <!--<div class="register fl">-->
+                <!--<a href="member/index_do.php?fmdo=login&dopost=exit">[ 退 出 登 录 ]</a>-->
+                <!--</div>-->
+                <!--{dede:global.cfg_indexurl/}/plus/uid.php-->
+                <script src="/czgyy/plus/uid.php" language="javascript"></script>
+                <div class="service fl ">
+                    联系客服：0317-5502276
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logo-bar warp">
+        <div class="logo">
+            <a href="">
+                <img src="{dede:global.cfg_templets_skin/}/images/logo1.png">
+            </a>
+            <div class="search fr">
+                <form class="search-form" action="{dede:global.cfg_indexurl/}/plus/search.php" target="_blank">
+                    <input class="search-input" type="text" placeholder="   请输入搜索内容">
+                    <input class="search-submit" type="button" value="">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".menu>li").hover(function () {
+                $(this).addClass("currenthover")
+                $(this).find('ul').first().slideDown("slow")
+            }, function () {
+                $(this).removeClass("currenthover")
+                $(this).find('ul').first().hide()
+            })
+        })
+    </script>
+    <div class="nav-bar">
+        <div class="warp">
+            <ul class="menu fl clearfix">
+                <li class="current"><a href="/">首页</a></li>
+                <li class="yiji">
+                    {dede:type typeid='1'}
+                    <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                    {/dede:type}
+                    <ul>
+                        {dede:channelartlist typeid='1' type='sun' noself='yes'}
+                        <li class="erji">
+                            <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                            <ul>
+                                {dede:channel noself='yes' }
+                                <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                                {/dede:channel}
+                            </ul>
+                        </li>
+                        {/dede:channelartlist}
+                    </ul>
+                </li>
+                <li class="yiji">
+                    {dede:type typeid='2'}
+                    <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                    {/dede:type}
+                    <ul>
+                        {dede:channelartlist typeid='2' type='sun' noself='yes'}
+                        <li class="erji">
+                            <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                            <ul>
+                                {dede:channel noself='yes' }
+                                <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                                {/dede:channel}
+                            </ul>
+                        </li>
+                        {/dede:channelartlist}
+                    </ul>
+                </li>
+                <li class="yiji">
+                    {dede:type typeid='3'}
+                    <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                    {/dede:type}
+                    <ul>
+                        {dede:channelartlist typeid='3' type='sun' noself='yes'}
+                        <li class="erji">
+                            <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                            <ul>
+                                {dede:channel noself='yes' }
+                                <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                                {/dede:channel}
+                            </ul>
+                        </li>
+                        {/dede:channelartlist}
+                    </ul>
+                </li>
+                <li class="yiji">
+                    {dede:type typeid='4'}
+                    <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                    {/dede:type}
+                    <ul>
+                        {dede:channelartlist typeid='4' type='sun' noself='yes'}
+                        <li class="erji">
+                            <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                            <ul>
+                                {dede:channel noself='yes' }
+                                <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                                {/dede:channel}
+                            </ul>
+                        </li>
+                        {/dede:channelartlist}
+                    </ul>
+                </li>
+                <li class="yiji">
+                    {dede:type typeid='5'}
+                    <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                    {/dede:type}
+                    <ul>
+                        {dede:channelartlist typeid='5' type='sun' noself='yes'}
+                        <li class="erji">
+                            <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                            <ul>
+                                {dede:channel noself='yes' }
+                                <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                                {/dede:channel}
+                            </ul>
+                        </li>
+                        {/dede:channelartlist}
+                    </ul>
+                </li>
+                <li class="yiji">
+                    {dede:type typeid='6'}
+                    <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                    {/dede:type}
+                    <ul>
+                        {dede:channelartlist typeid='6' type='sun' noself='yes'}
+                        <li class="erji">
+                            <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                            <ul>
+                                {dede:channel noself='yes' }
+                                <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                                {/dede:channel}
+                            </ul>
+                        </li>
+                        {/dede:channelartlist}
+                    </ul>
+                </li>
+                <li class="yiji">
+                    {dede:type typeid='7'}
+                    <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                    {/dede:type}
+                    <ul>
+                        {dede:channelartlist typeid='7' type='sun' noself='yes'}
+                        <li class="erji">
+                            <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                            <ul>
+                                {dede:channel noself='yes' }
+                                <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                                {/dede:channel}
+                            </ul>
+                        </li>
+                        {/dede:channelartlist}
+                    </ul>
+                </li>
+                <li class="yiji">
+                    {dede:type typeid='119'}
+                    <a class="underline" href="javascript:volid(0);">[field:typename/]</a>
+                    {/dede:type}
+                    <ul>
+                        {dede:channelartlist typeid='119' type='sun' noself='yes'}
+                        <li class="erji">
+                            <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                            <ul>
+                                {dede:channel noself='yes' }
+                                <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                                {/dede:channel}
+                            </ul>
+                        </li>
+                        {/dede:channelartlist}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // $(".nav-bar>.warp>ul>li").hover(function () {
+        //     var li = $(this)
+        //     li.addClass("currenthover")
+        //     var ul = li.find('ul').first();
+        //     ul.show()
+        //     ul.offset({left: li.offset().left})
+        //     console.log(ul)
+        // }, function () {
+        //     var li = $(this)
+        //     var ul = li.find('ul');
+        //     ul.hide();
+        //     $(this).removeClass("currenthover")
+        // })
+        // $(".nav-bar>.warp>ul>li>ul>li").hover(function () {
+        //     var li = $(this)
+        //     var ul = li.find('ul').first();
+        //     ul.show()
+        // },function () {
+        //     var li = $(this)
+        //     var ul = li.find('ul').first();
+        //     ul.hide()
+        // })
+
+        $(".erji").has("ul").hover(function () {
+            console.log('erji')
+            if ($(this).find('ul li').length) {
+                $(this).addClass("current1").find("ul").first().stop().slideDown()
+            }
+        }, function () {
+            $(this).removeClass("current1").find("ul").stop().slideUp(10)
+        });
+        $(".erji").hover(function () {
+            $(this).find('ul').offset({
+                top: $(this).offset().top
+            })
+        })
+    </script>
+
+</div>

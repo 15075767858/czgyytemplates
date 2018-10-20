@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--header start-->
+{dede:include filename="head.htm"/}
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/abilityPreview.css"/>
+<!--header start-->
+
+<!--header end--><!--header end-->
+<!--content start-->
+<body>
+<div class="content clearfix">
+    <div class="search-top wrapper">
+        <!--<a href="/rjyy/index.jhtml" target="_blank">软件应用</a><a href="/rjyyRjjsym/index.jhtml" target="_blank">软件检索</a>-->
+        <!--<a class="current show-title" title="CAXA工艺图表2013R1">CAXA工艺图表2013R1</a>-->
+        {dede:field name='position'/} <a>{dede:field.title/}</a>
+    </div>
+
+    <div class="ability soft">
+        <div class="soft-info clearfix wrapper" style="height: 350px;">
+            <div class="soft-left">
+                <img class="" id="0" src="{dede:field.litpic/}">
+            </div>
+            <div class="soft-right">
+                <div class="soft-desc">
+                    <div class="soft-title">
+                        <p class="soft-name" title="{dede:field.title/}">{dede:field.title/}</p>
+                        <img src="/rjyyRjjsym/software_info_browse.jspx?id=26" style="display: none">
+                    </div>
+                    <div class="soft-other">
+                        {dede:memberinfos}
+                        <span>软件类型：</span>图文档<br>
+                        <span>公司名称：</span><span title="CAXA工艺图表2013R1">[field:company /]</span><br>
+                        <span>所在地区：</span><span title="内蒙古自治区包头市东河区无">[field:address /]</span><br>
+                        <span>联系人：</span><span title="管理员">[field:linkman /]</span><br>
+                        {/dede:memberinfos}
+
+                    </div>
+                    <button onclick="location.href='wu'">在线应用</button>
+                </div>
+            </div>
+        </div>
+        <div class="showLike wrapper">
+            <div class="kingsTop wrapper">
+                <span class="current">文字说明</span>
+            </div>
+            <div id="contentTxtHere" style="display:block">
+                {dede:field.body /}
+            </div>
+        </div>
+        <br><br>
+
+        <input id="id" name="id" value="26" hidden="hidden">
+    </div>
+</div>
+
+</body>
+
+<!--footer start-->
+<script type="text/javascript" charset="utf-8" src="{dede:global.cfg_templets_skin/}/js/abilityPreview.js"></script>
+{dede:include filename="footer.htm"/}
+<!--footer end--></html>
